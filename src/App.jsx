@@ -4,12 +4,13 @@ import { Provider } from "react-redux";
 import store from "./redux/store.js";
 import { lazy, Suspense } from "react";
 import loadWithDelay from "./utils/loadWithDelay.js";
-const Home = lazy(() => loadWithDelay(() => import("./page/Home"), 2000));
+import { Spin } from "antd";
+const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {
   return (
     <Provider store={store}>
       <Header />
-      <Suspense fallback={<p className="alert">Loading...</p>}>
+      <Suspense fallback={<Spin tip="Loading..."></Spin>}>
         <Routes>
           <Route element={<Home></Home>} path="/"></Route>
         </Routes>
