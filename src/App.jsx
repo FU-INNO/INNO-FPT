@@ -5,6 +5,7 @@ import store from "./redux/store.js";
 import { lazy, Suspense } from "react";
 import loadWithDelay from "./utils/loadWithDelay.js";
 import { Spin } from "antd";
+import ChatBox from "./components/ChatBox.jsx";
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route element={<Home></Home>} path="/"></Route>
         </Routes>
+        <ChatBox />
       </Suspense>
     </Provider>
   );
