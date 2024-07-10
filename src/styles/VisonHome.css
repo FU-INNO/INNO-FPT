@@ -1,0 +1,77 @@
+.section-title-vison span {
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-style: italic;
+    color: #444241 !important;
+}
+
+.section-title-vison h2 {
+    line-height: 1;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.card-style4 .card-body .features-icon img {
+    position: relative;
+    width: 90px;
+    padding-top: 16px;
+    transition: all 0.3s ease 0s;
+    max-width: 100%;
+    height: 100px;
+    vertical-align: top;
+}
+
+.card-style4:hover .card-body .features-icon img {
+    transform: rotateY(180deg);
+}
+
+.card-style4 .card-body .features-icon:before {
+    position: absolute;
+    content: '';
+    height: 50px;
+    width: 50px;
+    background-color: #321d0b;
+    opacity: .05;
+    left: 30%;
+    border-radius: 50px;
+    transition: .5s all ease;
+}
+
+.card-style4:hover .card-body .features-icon:before {
+    width: 90px;
+    height: 90px;
+}
+
+@media screen and (max-width: 750px) {
+    .card-style4 .card-body .features-icon:before {
+        left: 40%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .card-style4 .card-body .features-icon:before {
+        left: 45%;
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 900px) {
+    .card-style4 .card-body .features-icon:before {
+        left: 40%;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 750px) {
+    .card-style4 .card-body .features-icon:before {
+        left: 30%;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+    .card-style4 .card-body .features-icon:before {
+        left: 40%;
+    }
+}
+
+.ant-card-bordered {
+    border: 1px solid #444241 !important;
+}
