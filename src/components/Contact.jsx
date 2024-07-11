@@ -1,32 +1,41 @@
 import { useRef } from "react";
 import { Form, Input, Button } from "antd";
 import emailjs from "@emailjs/browser";
+import  { useRef } from 'react';
+import { Form, Input, Button } from 'antd';
+import emailjs from '@emailjs/browser';
 
 export const ContactUs = () => {
-  const form = useRef();
+  const formRef = useRef();
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const sendEmail = (values) => {
+    console.log('Form Values:', values);
+
+    const templateParams = {
+      user_name: values.user_name,
+      user_email: values.user_email,
+      message: values.message,
+    };
+
+    console.log('Template Params:', templateParams);
 
     emailjs
-      .sendForm(
-        "service_w8ayrhz",
-        "template_op0z0uw",
-        form.current,
-        "349V1zqbpVQ4sA3k2"
-      )
+      .send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams, 'YOUR_PUBLIC_KEY')
       .then(
         () => {
           console.log("SUCCESS!");
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
         },
         (error) => {
           console.log("FAILED...", error.text);
+          console.log('FAILED...', error);
         }
       );
   };
 
   return (
-    <Form ref={form} layout="vertical" onSubmitCapture={sendEmail}>
+    <Form ref={formRef} layout="vertical" onFinish={sendEmail}>
       <Form.Item
         label="Name"
         name="user_name"
