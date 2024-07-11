@@ -17,6 +17,7 @@ import Question from "./page/Question.jsx";
 import ListBlog from "./page/ListBlog.jsx";
 import BlogDetail from "./page/DetailBlog.jsx";
 import Spinner from "./components/Spinner.jsx";
+import BlogPost from "./page/DetailBlog.jsx";
 
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {
@@ -32,7 +33,7 @@ function App() {
           <Route element={<Error></Error>} path="/*"></Route>
           <Route element={<Question></Question>} path="/question"></Route>
           <Route element={<ListBlog></ListBlog>} path="/listBlog"></Route>
-          <Route element={<BlogDetail></BlogDetail>} path="/blogDetail"></Route>
+          <Route element={<BlogPost></BlogPost>} path="/blog/:url"></Route>
         </Routes>
         <ChatBox />
         <Footer />

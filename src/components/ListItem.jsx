@@ -1,59 +1,44 @@
-import { Layout, Row, Col } from 'antd';
-import '../styles/ListBlog.css';
-import slide1 from '../assets/slider/slider1.jpg'
-import slide2 from '../assets/slider/slider2.jpg'
-import slide3 from '../assets/slider/slider3.jpg'
-const {  Content } = Layout;
-
-
-
-
-
-const posts = [
-  {
-    imgSrc: slide1,
-    category: "Explore",
-    title: "The best place to explore to enjoy",
-    date: "June 15, 2019"
-  },
-  {
-    imgSrc: slide2,
-    category: "Lifestyle",
-    title: "How to Make list for travelling alone",
-    date: "September 15, 2019"
-  },
-  {
-    imgSrc: slide3,
-    category: "Food",
-    title: "5 ingredient cilantro vinaigrette",
-    date: "September 15, 2019"
-  },
-  {
-    imgSrc: slide3,
-    category: "Explore",
-    title: "A Simple Way to Feel Like Home When You Travel",
-    date: "March 20, 2019"
-  }
-];
+// src/components/ListBlog.jsx
+import React from "react";
+import { Layout, Row, Col } from "antd";
+import { Link } from "react-router-dom";
+import "../styles/ListBlog.css";
+import { BannerData } from "../Data/BannerData";
+const { Content } = Layout;
 
 const ListBlog = () => (
   <Layout>
     <Content>
       <section className="section-padding">
         <Row gutter={[16, 16]}>
-          {posts.map((post, index) => (
+          {BannerData.map((post, index) => (
             <Col lg={6} md={12} sm={12} xs={24} key={index}>
               <article className="post-grid mb-5">
-                <a className="post-thumb mb-4 d-block" href="blog-single.html">
-                  <img src={post.imgSrc} alt="" className="img-fluid w-100" />
-                </a>
+                <Link
+                  className="post-thumb mb-4 d-block"
+                  to={`/blog/${encodeURIComponent(post.url)}`}
+                >
+                  <img
+                    src={post.image.url}
+                    alt=""
+                    className="img-fluid w-100"
+                  />
+                </Link>
                 <span className="cat-name text-color font-extra text-sm text-uppercase letter-spacing-1">
-                  {post.category}
+                  {post.articleSection}
                 </span>
                 <h3 className="post-title mt-1">
-                  <a href="blog-single.html">{post.title}</a>
+                  <Link to={`/blog/${encodeURIComponent(post.url)}`}>
+                    {post.headline}
+                  </Link>
                 </h3>
-                <span className="text-muted letter-spacing text-uppercase font-sm">{post.date}</span>
+                <span className="text-muted letter-spacing text-uppercase font-sm">
+                  {new Date(post.datePublished).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
               </article>
             </Col>
           ))}

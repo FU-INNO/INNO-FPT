@@ -1,4 +1,4 @@
-[
+export const BannerData = [
   {
     url: "https://daihoc.fpt.edu.vn/den-truong-cung-duoc-chua-lanh-sinh-vien-truong-dh-fpt-cu-vai-thang-lai-co-mot-workshop-vo-cung-de-thuong/",
     headline:
@@ -352,34 +352,6 @@
     keywords: "học bổng",
     description:
       "Với học bổng vào Trường ĐH FPT, những nữ sinh có thành tích học tập tốt như Vũ Thuý Ngân, Phan Thị Mai Uyên sẽ có môi trường nâng cao ngoại ngữ, trau dồi kỹ năng mềm, thuận lợi theo đuổi công việc mơ ước trong ngành truyền thông.",
-    author: {
-      "@type": "Person",
-      name: "Quỳnh",
-      url: "https://daihoc.fpt.edu.vn/author/quynhvu/",
-      image: {
-        "@type": "ImageObject",
-        url: "https://secure.gravatar.com/avatar/9787cb0a42922f2c19c01e843fc17400?s=96&d=mm&r=g",
-        height: 96,
-        width: 96,
-      },
-    },
-  },
-  {
-    url: "https://daihoc.fpt.edu.vn/hieu-pc-truyen-lua-tai-talkshow-hacker-roadmap-duong-dua-cua-the-gioi-an-ninh-mang/",
-    headline:
-      " Hiếu PC truyền lửa tại Talkshow “Hacker Roadmap” - Đường đua của thế giới an ninh...",
-    datePublished: "2024-05-18T07:54:45+07:00",
-    dateModified: "2024-05-17T16:02:44+07:00",
-
-    image: {
-      "@type": "ImageObject",
-      url: "https://daihoc.fpt.edu.vn/wp-content/uploads/2024/05/NAM00518-scaled.jpg",
-      width: 2560,
-      height: 1707,
-    },
-    articleSection: "Tin tức chung",
-    description:
-      "Vừa qua, talk show “Hacker Roadmap” – Đường đua của thế giới an ninh mạng đã diễn ra tại Phòng 102R - 104R, toà Alpha, Trường Đại học FPT Hà Nội với sự tham gia chia sẻ của anh Ngô Minh Hiếu (Hiếu PC). Talk show do Phòng Công",
     author: {
       "@type": "Person",
       name: "Quỳnh",
