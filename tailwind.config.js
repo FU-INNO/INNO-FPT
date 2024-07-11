@@ -9,6 +9,9 @@ module.exports = {
         xs: "300px",
         ip: "800px",
       },
+      colors: {
+        "custom-white": "rgba(255, 255, 255, 0.3)",
+      },
     },
   },
   plugins: [],
