@@ -19,6 +19,8 @@ const BouncingText = ({ text }) => {
       transition: {
         duration: 0.6,
         ease: "easeInOut",
+        repeat: Infinity,
+        repeatDelay: 5,
       },
     },
     hidden: {

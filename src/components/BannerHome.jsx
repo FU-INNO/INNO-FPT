@@ -3,11 +3,11 @@ import "../styles/BannerHome.css";
 const BannerHome = () => {
   return (
     <>
-      <header className="relative flex items-center justify-center mb-12 overflow-hidden aspect-video ">
+      <header className="relative flex items-center justify-center mb-12 overflow-hidden aspect-video xs:mt-[5.25rem] ">
         <div className="md:w-4/5  xl:w-3/4 pr-4 pl-4 col-xxl-8 mx-auto py-5 px-1-6 px-md-6 px-lg-8 px-4">
-          <div className="flex flex-wrap text-white  items-center min-vh-100 z-50 ">
-            <div className="md:w-4/5 xl:w-3/4 pr-4 pl-4 col-xxl-8 mx-auto py-5 p-36 px-lg-8 px-4 z-auto ">
-              <h1 className=" text-banner leading-normal mt-8 mt-lg-10 font-bold uppercase bg-clip-text text-transparent bg-gradient-to-r from-white to-orange-500 ">
+          <div className="flex flex-wrap text-white  items-center min-vh-100 z-50  ">
+            <div className="md:w-4/5 xl:w-3/4 pr-4 pl-4 col-xxl-8 mx-auto py-5 p-36 px-lg-8 px-4 z-auto  ">
+              <h1 className=" text-banner leading-normal mt-8 mt-lg-10 font-bold uppercase bg-clip-text text-transparent bg-gradient-to-r from-white to-orange-500 xs:text-[20px] xl:text-[50px] ">
                 Kỷ niệm 25 năm <span className="block">FPT Education</span>
               </h1>
               <span className="flex bg-clip-text font-semibold text-transparent bg-gradient-to-r from-white to-white text-center align-sub justify-center">
@@ -15,7 +15,7 @@ const BannerHome = () => {
                 trường Xanh
               </span>
               <div className="text-center justify-center mt-4">
-                <a href="history" className="butn">
+                <a href="history" className="butn xs:">
                   Lịch sử FPT Education
                 </a>
               </div>
