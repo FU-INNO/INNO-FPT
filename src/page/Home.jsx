@@ -6,6 +6,7 @@ import dreamImg from "../assets/About_fptedu.jpg";
 import BannerHome from "../components/BannerHome";
 import { AiOutlineUpCircle } from "react-icons/ai";
 import Slice from "../components/Slice";
+import PostShare from "../components/PostShare";
 const Home = () => {
   const [showGoToTop, setShowGoToTop] = useState(false);
 
@@ -43,6 +44,7 @@ const Home = () => {
       <VisonHome />
       <Image src={dreamImg} />
       <Slice />
+      <PostShare />
       {showGoToTop && (
         <button
           style={{
