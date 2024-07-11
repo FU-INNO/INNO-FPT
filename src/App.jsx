@@ -6,6 +6,7 @@ import { lazy, Suspense } from "react";
 import loadWithDelay from "./utils/loadWithDelay.js";
 import { Spin } from "antd";
 import ChatBox from "./components/ChatBox.jsx";
+import History from "./page/History.jsx";
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Suspense fallback={<Spin tip="Loading..."></Spin>}>
         <Routes>
           <Route element={<Home></Home>} path="/"></Route>
+          <Route element={<History></History>} path="/history"></Route>
         </Routes>
         <ChatBox />
       </Suspense>

@@ -1,6 +1,6 @@
 import "../styles/BannerHome.css";
 
-const Banner = () => {
+const BannerHome = () => {
   return (
     <>
       <header className="relative flex items-center justify-center mb-12 overflow-hidden aspect-video ">
@@ -15,7 +15,7 @@ const Banner = () => {
                 trường Xanh
               </span>
               <div className="text-center justify-center mt-4">
-                <a href="about.html" className="butn">
+                <a href="history" className="butn">
                   Lịch sử FPT Education
                 </a>
               </div>
@@ -49,4 +49,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default BannerHome;
