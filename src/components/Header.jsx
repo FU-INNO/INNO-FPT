@@ -102,15 +102,16 @@ const Header = () => {
           ) : null}
         </div>
         {openMenu && isMobile && (
-          <ul className="absolute top-[85px] right-0 bg-[#d8b952] text-center z-10 w-full text-black text-[20px]">
-            {["Home1", "Home2", "Home3", "Home4", "Home5"].map((item) => (
-              <li
-                key={item}
-                className="p-3 font-bold cursor-pointer border-b border-black border-opacity-5"
+          <ul className="absolute top-[85px] right-0 bg-[#d8b952] text-center z-10 w-full text-black text-[20px] flex-col flex">
+            {listLink?.map((item, key) => (
+              <Link
+                to={item?.link}
+                key={key}
+                className="text-[20px] p-5 text-white font-bold cursor-pointer hover:text-[#cd331f] focus:text-[#cd331f]"
                 onClick={() => setOpenMenu(false)}
               >
-                {item}
-              </li>
+                {item.home}
+              </Link>
             ))}
           </ul>
         )}
