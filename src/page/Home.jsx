@@ -1,12 +1,13 @@
-/* eslint-disable no-undef */
-import { useState, useEffect } from "react";
 import { Image } from "antd";
 import VisonHome from "../components/VisonHome";
 import dreamImg from "../assets/About_fptedu.jpg";
-import BannerHome from "../components/BannerHome";
-import { AiOutlineUpCircle } from "react-icons/ai";
-import Slice from "../components/Slice";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import PostShare from "../components/PostShare";
+import BannerHome from "../components/BannerHome";
+import Slice from "../components/Slice";
+import { AiOutlineUpCircle } from "react-icons/ai";
+
 const Home = () => {
   const [showGoToTop, setShowGoToTop] = useState(false);
 
@@ -38,13 +39,13 @@ const Home = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
   return (
     <div className="flex flex-col justify-center">
       <BannerHome />
       <VisonHome />
       <Image src={dreamImg} />
       <Slice />
-      <PostShare />
       {showGoToTop && (
         <button
           style={{
@@ -57,6 +58,7 @@ const Home = () => {
           <AiOutlineUpCircle className="text-[40px] text-[#22836c]" />
         </button>
       )}
+      <PostShare />
     </div>
   );
 };

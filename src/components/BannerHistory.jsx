@@ -2,7 +2,8 @@
 import { Link } from "react-router-dom";
 import banner from "../assets/conso.jpg";
 import "../styles/History.css";
-import BouncingText from "./BouncingText";
+import { motion } from "framer-motion";
+import BouncingText from "../components/BouncingText";
 // import { useSpring, animated } from "@react-spring/web";
 
 const BannerHistory = () => {

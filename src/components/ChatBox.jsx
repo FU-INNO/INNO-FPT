@@ -18,7 +18,6 @@ const ChatBox = () => {
     setVisible(true);
   };
 
-  // eslint-disable-next-line no-unused-vars
   const handleOk = () => {
     setVisible(false);
   };

@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [windowSize, setWindowSize] = useState({
     width: undefined,
-    hight: undefined,
+    height: undefined,
   });
   const [openMenu, setOpenMenu] = useState(false);
 
-  const [isMoble, setIsMoble] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleSize = () => {
       setWindowSize({
@@ -24,99 +24,72 @@ const Header = () => {
     return () => window.removeEventListener("resize", handleSize);
   }, []);
   useEffect(() => {
-    console.log(windowSize);
-    if (windowSize.width < 500) {
-      setIsMoble(true);
+    if (windowSize.width < 768) {
+      setIsMobile(true);
     } else {
-      setIsMoble(false);
+      setIsMobile(false);
     }
   }, [windowSize]);
 
   return (
-    <nav className="fixed top-0 right-0 left-0  flex items-center justify-center z-50">
-      <div className="flex w-[1296px] h-[85px] items-center md:justify-evenly bg-[#22836c] xs:justify-between xs:p-2 rounded-b-md">
-        <img className="cursor-pointer" width="80px" src={logo} />
-        <div className="xs:hidden md:block">
-          <ul className="flex flex-row ">
-            <li className="text-[20px] p-5 text-white font-bold  cursor-pointer hover:text-[#d8b952]">
-              TRANG CHỦ
-            </li>
-            <li className="text-[20px] p-5 text-white font-bold  cursor-pointer hover:text-[#d8b952]">
-              LỊCH SỬ
-            </li>
-            <li className="text-[20px] p-5 text-white font-bold  cursor-pointer hover:text-[#d8b952]">
-              CHIẾN DỊCH XANH
-            </li>
-            <li className="text-[20px] p-5 text-white font-bold  cursor-pointer hover:text-[#d8b952]">
-              BẢN TIN
-            </li>
-          </ul>
-        </div>
-        <div className="flex flex-row w-[210px] h-[46px] justify-center items-center text-white xs:w-[100px]">
-          <div className="px-[12px] py-[21px] font-black m-4"></div>
-          <li className="h-full  list-none flex justify-center items-center rounded-md text-[white] xs:hidden md:block">
-            <span className="font-bold  flex justify-center items-center w-[210px] h-full cursor-pointer">
-              <Link
-                to={"/post"}
-                className="relative line-height-[10px] font-medium overflow-hidden text-center rounded-lg p-2  inline-block text-white text-lg capitalize bg-[#d8b952] "
+    <nav className="fixed top-0 right-0 left-0 flex items-center justify-center z-50 bg-[#22836c] rounded-b-md ">
+      <div className="flex w-full max-w-[1296px] h-[85px] items-center justify-between p-2 md:justify-evenly">
+        <img
+          className="cursor-pointer xs:mb-5"
+          width="80px"
+          src="https://play-lh.googleusercontent.com/Fro4e_osoDhhrjgiZ_Y2C5FNXBMWvrb4rGpmkM1PDAcUPXeiAlPCq7NeaT4Q6NRUxRqo"
+          alt="Logo"
+        />
+        {!isMobile && (
+          <ul className="flex flex-row justify-center items-center">
+            {["Home1", "Home2", "Home3", "Home4", "Home5"].map((item) => (
+              <li
+                key={item}
+                className="text-[20px] p-5 text-white font-bold cursor-pointer hover:text-[#d8b952]"
               >
-                SỰ KIỆN SẮP TỚI
-              </Link>
-            </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="flex flex-row items-center text-white">
+          <div className="px-3 py-2 m-4">
+            <IoSearch className="text-[24px] cursor-pointer" />
+          </div>
+          <li className="hidden md:flex items-center bg-[#d8b952] text-white font-bold rounded-md h-full px-4 cursor-pointer">
+            <a className="text-lg capitalize px-2 py-3">Become Volunteer</a>
           </li>
-          {openMenu && isMoble ? (
-            <div className="p-[10px] bg-[#d8b952] mr-8">
-              <MdOutlineClose
-                size={"24px"}
-                onClick={() => setOpenMenu(!openMenu)}
-              />
-            </div>
-          ) : !openMenu && isMoble ? (
-            <div className="p-[10px] bg-[#d8b952] mr-8 ">
-              <HiOutlineMenu
-                size={"24px"}
-                onClick={() => setOpenMenu(!openMenu)}
-              />
-            </div>
-          ) : (
-            <ul className="md:flex md:flex-row md:gap-10  md:hidden">
-              <li className="text-[20px] p-5 text-white font-bold  cursor-pointer hover:text-[#d8b952]">
-                Home1
-              </li>
-              <li className="text-[20px] p-5 text-white font-bold  cursor-pointer hover:text-[#d8b952]">
-                Home2
-              </li>
-              <li className="text-[20px] p-5 text-white font-bold  cursor-pointer hover:text-[#d8b952]">
-                Home3
-              </li>
-              <li className="text-[20px] p-5 text-white font-bold  cursor-pointer hover:text-[#d8b952]">
-                Home4
-              </li>
-              <li className="text-[20px] p-5 text-white font-bold  cursor-pointer hover:text-[#d8b952]">
-                Home5
-              </li>
-            </ul>
-          )}
-          {openMenu && (
-            <ul className="absolute xs:mr-[-40px] md:hidden px-2 top-[85px] right-10 bg-[#d8b952]  p-10 text-center z-10 w-full text-black text-13">
-              <li className="text-[20px] p-5 text-black font-bold  cursor-pointer hover:text-[#d8b952] border-b  border-[black]">
-                Home1
-              </li>
-              <li className="text-[20px] p-5 text-black font-bold  cursor-pointer hover:text-[#d8b952]">
-                Home2
-              </li>
-              <li className="text-[20px] p-5 text-black font-bold  cursor-pointer hover:text-[#d8b952]">
-                Home3
-              </li>
-              <li className="text-[20px] p-5 text-black font-bold  cursor-pointer hover:text-[#d8b952]">
-                Home4
-              </li>
-              <li className="text-[20px] p-5 text-black font-bold  cursor-pointer hover:text-[#d8b952]">
-                Home5
-              </li>
-            </ul>
-          )}
+          {isMobile ? (
+            openMenu ? (
+              <div className="p-2 bg-[#d8b952] cursor-pointer">
+                <MdOutlineClose
+                  size={"24px"}
+                  onClick={() => setOpenMenu(!openMenu)}
+                />
+              </div>
+            ) : (
+              <div className="p-2 bg-[#d8b952] cursor-pointer">
+                <HiOutlineMenu
+                  size={"24px"}
+                  onClick={() => setOpenMenu(!openMenu)}
+                />
+              </div>
+            )
+          ) : null}
         </div>
+        {openMenu && isMobile && (
+          <ul className="absolute top-[85px] right-0 bg-[#d8b952] text-center z-10 w-full text-black text-[20px]">
+            {["Home1", "Home2", "Home3", "Home4", "Home5"].map((item) => (
+              <li
+                key={item}
+                className="p-3 font-bold cursor-pointer border-b border-black border-opacity-5"
+                onClick={() => setOpenMenu(false)}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </nav>
   );

@@ -1,12 +1,14 @@
 import { Route, Routes } from "react-router";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
+import { useState } from "react";
+import Header from "./components/Header.jsx";
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
 import { lazy, Suspense } from "react";
 import loadWithDelay from "./utils/loadWithDelay.js";
 import { Spin } from "antd";
+import Slice from "./components/Slice.jsx";
+import Error from "./components/403.jsx";
+import Footer from "./components/Footer.jsx";
 import ChatBox from "./components/ChatBox.jsx";
 import History from "./page/History.jsx";
 import Location from "./Location.jsx";
@@ -33,8 +35,8 @@ function App() {
           <Route element={<BlogDetail></BlogDetail>} path="/blogDetail"></Route>
         </Routes>
         <ChatBox />
+        <Footer />
       </Suspense>
-      <Footer />
     </Provider>
   );
 }

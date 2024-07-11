@@ -85,7 +85,7 @@ const Slice = () => {
               key={item.id}
               className="relative min-h-[1px] w-[268px] float-left"
             >
-              <div className="flex flex-col items-center text-center lg:m-2">
+              <div className="flex flex-col items-center text-center lg:m-2 ">
                 <img
                   className="rounded-2xl text-center "
                   width="267px"
