@@ -15,6 +15,7 @@ import Question from "./page/Question.jsx";
 import ListBlog from "./page/ListBlog.jsx";
 import BlogDetail from "./page/DetailBlog.jsx";
 import PostShare from "./components/PostShare.jsx";
+import Project from "./page/Project.jsx";
 
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {
@@ -32,6 +33,8 @@ function App() {
           <Route element={<ListBlog></ListBlog>} path="/listBlog"></Route>
           <Route element={<BlogDetail></BlogDetail>} path="/blogDetail"></Route>
           <Route element={<PostShare></PostShare>} path="/comming-soon"></Route>
+          <Route element={<Project></Project>} path="/project"></Route>
+          <Route element={<Location></Location>} path="/project"></Route>
         </Routes>
         <ChatBox />
         <Footer />

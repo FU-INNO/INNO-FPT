@@ -7,9 +7,8 @@ const ListBlog = () => {
 
   return (
     <>
-      <CarouselBlog/>
+      <CarouselBlog />
       <ListItem />
-      
     </>
   );
 };

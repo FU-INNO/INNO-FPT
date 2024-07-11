@@ -31,6 +31,10 @@ const Header = () => {
       home: "Câu hỏi",
       link: "/question",
     },
+    {
+      home: "Đề xuất dự án",
+      link: "/location",
+    },
   ];
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
