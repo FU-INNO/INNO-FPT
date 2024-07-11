@@ -2,7 +2,7 @@ import { IoSearch } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
-
+import logo from "../assets/logo.png";
 const Header = () => {
   const [windowSize, setWindowSize] = useState({
     width: undefined,
@@ -36,7 +36,7 @@ const Header = () => {
         <img
           className="cursor-pointer xs:mb-5"
           width="80px"
-          src="https://play-lh.googleusercontent.com/Fro4e_osoDhhrjgiZ_Y2C5FNXBMWvrb4rGpmkM1PDAcUPXeiAlPCq7NeaT4Q6NRUxRqo"
+          src={logo}
           alt="Logo"
         />
         {!isMobile && (
