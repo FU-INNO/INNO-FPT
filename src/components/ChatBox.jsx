@@ -41,10 +41,13 @@ const ChatBox = () => {
     <>
       <div className="all-demo fixed top-0 right-[-26rem] bg-orange-700 shadow-lg z-50 transition-all ease-in-out duration-200 hidden lg:inline-block font-merienda">
         <div
-          className="text-black text-xs uppercase py-1.5 px-2.5 font-medium alt-font flex"
+          className="text-black text-xs uppercase py-1.5 px-2.5 font-medium alt-font "
           onClick={showModal}
         >
           <div className="flex items-center justify-center">
+            <span className="text-white text-base relative top-0 opacity-0">
+              Chat with AI
+            </span>
             <img
               className="far fa-envelope text-white text-base align-middle relative top-[-0.25rem]"
               width={"50px"}
@@ -52,16 +55,13 @@ const ChatBox = () => {
               src={v3}
               alt="chat icon"
             />
-            <span className="text-white text-base relative top-0 opacity-0">
-              Chat with AI
-            </span>
           </div>
         </div>
       </div>
 
       <Modal
         title={
-          <div className="flex justify-start">
+          <div className="flex  justify-start ">
             <Avatar
               src="https://vcdn.subiz-cdn.com/file/firpkaqtviltgwodoyke_acosmvqwksvfjsq16c0d"
               size="large"
@@ -78,7 +78,7 @@ const ChatBox = () => {
         footer={null}
         onCancel={handleCancel}
       >
-        <div className="cardChat mt-5 w-full md:w-1/2 lg:w-1/3">
+        <div className="cardChat mt-5  w-full md:w-1/2 lg:w-1/3 ">
           <div className="flex   justify-start">
             <img
               src="https://vcdn.subiz-cdn.com/file/firpkaqtviltgwodoyke_acosmvqwksvfjsq16c0d"
@@ -92,9 +92,9 @@ const ChatBox = () => {
           {messages.map((message, index) => {
             if (message?.type === "user") {
               return (
-                <div key={index} className="flex p-3 justify-end ">
+                <div key={index} className=" flex p-3 justify-end ">
                   <div className="bg-white mr-2 p-3 rounded-lg shadow-md">
-                    {message.text}
+                    s{message.text}
                   </div>
                   <img src={person} alt="user" className="w-8 h-8" />
                 </div>
@@ -134,15 +134,15 @@ const ChatBox = () => {
               </p>
             </div>
           )}
-          <div className="form-group px-3">
-            <textarea
-              className="form-control w-full p-3 border border-gray-300 rounded-lg"
-              placeholder="Type your message"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-            ></textarea>
-            <Button onClick={handleClickSend}>Gửi</Button>
-          </div>
+        </div>
+        <div className="form-group px-3">
+          <textarea
+            className="form-control w-full p-3 border border-gray-300 rounded-lg"
+            placeholder="Type your message"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          ></textarea>
+          <Button onClick={handleClickSend}>Gửi</Button>
         </div>
       </Modal>
     </>
