@@ -1,6 +1,13 @@
 import { Tooltip } from "antd";
 import { Link } from "react-router-dom";
 import ContactUs from "./Contact";
+import hn from "../assets/hanoi.jpg";
+import dn from "../assets/danang.jpg";
+import hcm from "../assets/hcm.jpg";
+import taynguyen from "../assets/taynguyen.webp";
+import cantho from "../assets/cantho.jpg";
+import quynhon from "../assets/quynhon.jpeg";
+
 const text = (src) => {
   return (
     <>
@@ -53,52 +60,54 @@ const Footer = () => {
             </span>{" "}
             Địa điểm
           </h3>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-3 gap-7">
             <Tooltip placement="leftTop" title={text(list.at(0).link)}>
               <img
-                src="https://ecology.websitelayout.net/img/content/work-04.jpg"
+                src={hn}
                 alt="Gallery item"
-                className="w-full h-auto rounded-md"
+                className="w-full h-full rounded-md"
               />
-              <p>Hà Nội campus</p>
+              <p>Hà Nội </p>
             </Tooltip>
             <Tooltip placement="top" title={text(list.at(1).link)}>
               <img
-                src="https://ecology.websitelayout.net/img/content/work-04.jpg"
+                src={cantho}
                 alt="Gallery item"
-                className="w-full h-auto rounded-md"
+                className="w-full h-full rounded-md"
               />
-              <p>Cần Thơ campus</p>
+              <p>Cần Thơ </p>
             </Tooltip>{" "}
             <Tooltip placement="top" title={text(list.at(2).link)}>
               <img
-                src="https://ecology.websitelayout.net/img/content/work-04.jpg"
+                width="100px"
+                height="50px"
+                src={dn}
                 alt="Gallery item"
-                className="w-full h-auto rounded-md"
+                className="w-full h-full rounded-md"
               />
-              <p>Đà Nẵng campus</p>
+              <p>Đà Nẵng </p>
             </Tooltip>{" "}
             <Tooltip placement="bottomLeft" title={text(list.at(3).link)}>
               <img
-                src="https://ecology.websitelayout.net/img/content/work-04.jpg"
+                src={hcm}
                 alt="Gallery item"
-                className="w-full h-auto rounded-md"
+                className="w-full h-full rounded-md"
               />
-              <p>Hồ Chí Minh campus</p>
+              <p>Hồ Chí Minh </p>
             </Tooltip>{" "}
             <Tooltip placement="bottom" title={text(list.at(4).link)}>
               <img
-                src="https://ecology.websitelayout.net/img/content/work-04.jpg"
+                src={quynhon}
                 alt="Gallery item"
-                className="w-full h-auto rounded-md"
+                className="w-full h-full rounded-md"
               />
-              <p>Quy Nhơn campus</p>
+              <p>Quy Nhơn </p>
             </Tooltip>{" "}
             <Tooltip placement="bottom" title={text(list.at(5).link)}>
               <img
-                src="https://ecology.websitelayout.net/img/content/work-04.jpg"
+                src={taynguyen}
                 alt="Gallery item"
-                className="w-full h-auto rounded-md"
+                className="w-full h-full rounded-md"
               />
               <p>Tây Nguyên</p>
             </Tooltip>
