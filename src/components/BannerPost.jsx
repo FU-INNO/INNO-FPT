@@ -1,11 +1,11 @@
 // import { useState } from "react";
 import { Link } from "react-router-dom";
-import banner from "../assets/conso.jpg";
+import banner from "../assets/hue.jpg";
 import "../styles/History.css";
 import BouncingText from "../components/BouncingText";
 // import { useSpring, animated } from "@react-spring/web";
 
-const BannerHistory = () => {
+const BannerPost = () => {
   //   const [visited, setVisited] = useState(60000);
   //   const [global, setGlobal] = useState(180);
   //   const [country, setCountry] = useState(40);
@@ -54,7 +54,7 @@ const BannerHistory = () => {
             transform: "translate3d(0px, 0px, 0px)",
           }}
         >
-          <BouncingText text=" Cột mốc FPT" />
+          <BouncingText text="Bài đăng" />
         </h2>
 
         <div className="sub-sm-title mt-4">
@@ -67,7 +67,7 @@ const BannerHistory = () => {
               <Link to="/">Trang chủ</Link>
             </li>
             <li>
-              <Link to="">Lịch sử</Link>
+              <Link to="">Câu hỏi</Link>
             </li>
           </ul>
         </div>
@@ -76,7 +76,7 @@ const BannerHistory = () => {
   );
 };
 
-export default BannerHistory;
+export default BannerPost;
 
 // <div className="container mx-auto px-4 relative z-50 grid col  ">
 // <div className="grid gap-3 col  mt-n1-9 max-md:gap-y-16">
