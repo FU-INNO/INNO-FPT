@@ -1,24 +1,41 @@
-import { Button } from "antd";
-import { GoogleOutlined } from "@ant-design/icons";
+import { useEffect } from "react";
+import { login } from "../api/auth.api";
+import { useUser } from "../hooks/useUser";
+import { Spin } from "antd";
 
 const Login = () => {
-  return (
-    <>
-      <div className="flex items-center justify-center min-h-screen bg-white flex-col">
-        <div className="p-6 bg-black rounded-lg shadow-lg">
-          <h3 className="  font-bold uppercase bg-clip-text text-transparent bg-gradient-to-r from-white to-orange-500 ">
-            Đăng nhập
-          </h3>
-          <Button
-            icon={<GoogleOutlined />}
-            className="flex items-center justify-center w-full mb-4 text-white bg-red-500 hover:bg-red-600"
-          >
-            <span>Tiếp tục với Google</span>
-          </Button>
-        </div>
-      </div>
-    </>
-  );
+  const url = window.location;
+  const params = new URLSearchParams(url.search);
+  const getParams = async () => {
+    const id = params.get("id");
+    const token = params.get("token");
+    return { id, token };
+  };
+
+  const { setUser } = useUser();
+  const asyncLogin = async () => {
+    const { id, token } = await getParams();
+    await login({ id, token })
+      .then((res) => {
+        if (res.status === 200) {
+          //save token to local storage
+          localStorage.setItem("token", res?.data?.data?.token);
+          localStorage.setItem("id", res?.data?.data?.user?.id);
+          //save user
+          setUser(res?.data?.user);
+          //redirect to home
+          window.location.href = "/";
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    asyncLogin();
+  }, []);
+
+  return <Spin tip="Loading..."></Spin>;
 };
 
 export default Login;

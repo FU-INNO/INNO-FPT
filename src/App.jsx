@@ -9,8 +9,8 @@ import loadWithDelay from "./utils/loadWithDelay.js";
 import { Spin } from "antd";
 import ChatBox from "./components/ChatBox.jsx";
 import History from "./page/History.jsx";
-import Login from "./components/Login.jsx";
 import Location from "./Location.jsx";
+import Login from "./components/Login.jsx";
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {
   return (
