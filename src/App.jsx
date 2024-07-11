@@ -18,6 +18,7 @@ import Spinner from "./components/Spinner.jsx";
 import BlogPost from "./page/DetailBlog.jsx";
 import TextToSpeech from "./components/TextToSpeech.jsx";
 import PostShare from "./components/PostShare.jsx";
+import Project from "./page/Project.jsx";
 
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {
@@ -34,6 +35,10 @@ function App() {
           <Route element={<Question></Question>} path="/question"></Route>
           <Route element={<ListBlog></ListBlog>} path="/listBlog"></Route>
           <Route element={<BlogPost></BlogPost>} path="/blog/:url"></Route>
+          <Route element={<BlogDetail></BlogDetail>} path="/blogDetail"></Route>
+          <Route element={<PostShare></PostShare>} path="/comming-soon"></Route>
+          <Route element={<Project></Project>} path="/project"></Route>
+          <Route element={<Location></Location>} path="/project"></Route>
         </Routes>
         <ChatBox />
         <Footer />

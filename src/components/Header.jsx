@@ -36,6 +36,10 @@ const Header = () => {
       home: "Câu hỏi",
       link: "/question",
     },
+    {
+      home: "Đề xuất dự án",
+      link: "/location",
+    },
   ];
   const [isMobile, setIsMobile] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -91,7 +95,7 @@ const Header = () => {
               <Link
                 to={item?.link}
                 key={key}
-                className={`text-[20px] p-5 font-bold cursor-pointer hover:text-[#d8b952] focus:text-[#d8b952] ${
+                className={`text-[10px] xl:text-[20px] p-5 font-bold cursor-pointer hover:text-[#d8b952] focus:text-[#d8b952] ${
                   scrollY > 85 ? "text-black" : "text-white"
                 }`}
               >
@@ -101,7 +105,7 @@ const Header = () => {
           </ul>
         )}
         <div className="flex flex-row items-center">
-          <div className="px-3 py-2 m-4">
+          <div className="px-3 py-2 m-4 xs:hidden 2xl:hidden">
             {isDarkMode ? (
               <BsSunFill
                 size={"24px"}
@@ -119,7 +123,7 @@ const Header = () => {
             )}
           </div>
           <li className="hidden md:flex items-center bg-[#d8b952] text-white font-bold rounded-md h-full px-4 cursor-pointer">
-            <a className="text-lg capitalize px-2 py-3">Become Volunteer</a>
+            <a className="text-lg capitalize px-2 py-3">Đăng Nhập</a>
           </li>
           {isMobile ? (
             openMenu ? (

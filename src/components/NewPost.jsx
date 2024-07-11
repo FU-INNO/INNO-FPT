@@ -1,4 +1,5 @@
-import { Button } from "antd";
+import { Button, QRCode, Space } from "antd";
+import useToken from "antd/es/theme/useToken";
 import { useEffect, useState } from "react";
 import Countdown from "react-countdown";
 import { FacebookShareButton, FacebookIcon } from "react-share";
@@ -34,7 +35,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 
 const NewPost = () => {
   const [currentPageUrl, setCurrentPageUrl] = useState("");
-
+  const token = useToken();
   useEffect(() => {
     setCurrentPageUrl(window.location.href);
   }, []);
@@ -46,6 +47,7 @@ const NewPost = () => {
       49 * 60 * 1000 +
       28 * 1000
   );
+  const text = "https://ant.design/";
   return (
     <section
       className="bg-cover bg-center w-full flex flex-col items-center justify-center fixed inset-0 z-50"
@@ -54,10 +56,25 @@ const NewPost = () => {
           'url("https://ecology.websitelayout.net/img/bg/bg-01.jpg")',
       }}
     >
+      <Space
+        className="absolute z-50 cursor-pointer left-1"
+        direction="vertical"
+        align="center"
+        width="100"
+        height="100"
+      >
+        <Button>Đăng ký ngay</Button>
+        <QRCode
+          className=""
+          value={text || "-"}
+          color={token.colorInfoText}
+          bgColor={token.colorBgLayout}
+        />
+      </Space>
       <div
         style={{ position: "absolute", zIndex: "1000", top: "0", left: "0" }}
       >
-        <Button onClick={() => window.history.back()}>Back</Button>
+        <Button onClick={() => window.history.back()}>Quay lại</Button>
       </div>
       <div className="absolute inset-0 bg-black opacity-50 z-40 border-[1px]"></div>
       <div className="w-[640px] h-[450px] flex items-center justify-center z-50 ">
@@ -81,7 +98,7 @@ const NewPost = () => {
           <Countdown date={targetDate} renderer={renderer} />
         </div>
       </div>
-      <p>Thông tin chi tiết</p>
+      <p className="text-white z-50 text-sm">Thông tin chi tiết </p>
       <FacebookShareButton
         url={currentPageUrl}
         className="cursor-pointer flex z-50"

@@ -31,10 +31,12 @@ const Map = () => {
       const response = await axios.get(
         `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=3c93cb4a7e774f9b8e218edc60fe80d8`
       );
-      const { state, country } = response.data.results[0].components;
-
-      console.log("city", response);
-      setAddress({ state, country });
+      const { city, country } = response.data.results[0].components;
+      console.log(
+        "response.data.results[0].components",
+        response.data.results[0].components
+      );
+      setAddress({ city, country });
     } catch (error) {
       console.error("Error getting address", error);
     }
@@ -47,7 +49,7 @@ const Map = () => {
         <p id="locInfo">
           Latitude: {location.lat}, Longitude: {location.lng}
           <br />
-          City: {address.state}, Country: {address.country}
+          City: {address.city}, Country: {address.country}
         </p>
       )}
     </div>
