@@ -1,0 +1,35 @@
+.sidebar .widget:last-child {
+    margin-bottom: 0;
+    border: 0;
+}
+
+.sidebar .widget {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 35px 0;
+    box-shadow: 0 1rem 1.75rem 0 rgba(45, 55, 75, 0.1);
+    border: 0.0625rem solid rgba(220, 224, 229, 0.6);
+    border-radius: 10px;
+}
+
+.sidebar .widget .section-title span {
+    background-color: #22836c;
+    padding: 6px 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 2;
+    color: #fff;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.section-title span {
+    letter-spacing: 2px;
+    color: #d8b952;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.sidebar .widget-info {
+    padding-left: 50px;
+}

@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 const Slice = () => {
   const settings = {
@@ -73,9 +74,9 @@ const Slice = () => {
           The associated press economy and climate, environmental change,
           financial and political advancements on the planet.
         </p>
-        <a href="#" className="text-[#d8b952] font-semibold">
+        <Link href="#" className="text-[#d8b952] font-semibold">
           Learn More
-        </a>
+        </Link>
       </div>
       <div className="w-[75%]">
         <Slider {...settings}>

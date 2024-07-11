@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import PostShare from "../components/PostShare";
 import BannerHome from "../components/BannerHome";
+import Slice from "../components/Slice";
 import { AiOutlineUpCircle } from "react-icons/ai";
 
 const Home = () => {
@@ -46,6 +47,7 @@ const Home = () => {
       <BannerHome />
       <VisonHome />
       <Image src={dreamImg} />
+      <Slice />
       <Footer />
       {showGoToTop && (
         <button
