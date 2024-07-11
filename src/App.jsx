@@ -12,7 +12,7 @@ import Footer from "./components/Footer.jsx";
 import ChatBox from "./components/ChatBox.jsx";
 import History from "./page/History.jsx";
 import Login from "./components/Login.jsx";
-
+import Location from "./Location.jsx";
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
           <Route element={<Home></Home>} path="/"></Route>
           <Route element={<History></History>} path="/history"></Route>
           <Route element={<Login></Login>} path="/login"></Route>
+          <Route element={<Location></Location>} path="/location"></Route>
           <Route element={<Error></Error>} path="/*"></Route>
         </Routes>
         <ChatBox />

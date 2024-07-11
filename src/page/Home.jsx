@@ -59,7 +59,7 @@ const Home = () => {
           <AiOutlineUpCircle className="text-[40px] text-[#22836c]" />
         </button>
       )}
-      {/* <PostShare /> */}
+      <PostShare />
     </div>
   );
 };
