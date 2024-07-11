@@ -5,7 +5,6 @@ import dreamImg from "../assets/About_fptedu.jpg";
 // import Footer from "../components/Footer";
 // import Header from "../components/Header";
 import BannerHome from "../components/BannerHome";
-import Slice from "../components/Slice";
 import { AiOutlineUpCircle } from "react-icons/ai";
 import { useEffect, useState } from "react";
 
@@ -46,7 +45,6 @@ const Home = () => {
       <BannerHome />
       <VisonHome />
       <Image src={dreamImg} />
-      <Slice />
       {showGoToTop && (
         <button
           style={{

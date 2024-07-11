@@ -39,34 +39,48 @@ const AboutHistory = () => {
   const items = [
     {
       id: 1,
-      img: { anh1 },
-      title: "Recycle Project",
-      description:
-        "The point is to accomplish an economy that is as one with nature and the climate.",
+      img: anh1,
+      title: "Công nghệ thông tin",
+      description: [
+        "Công nghệ ô tô số",
+        "Trí tuệ nhân tạo",
+        "Kỹ thuật phần mềm",
+        "Hệ thống công nghệ thông tin",
+        "Thiết kế mỹ thuật số",
+      ],
     },
     {
       id: 2,
-      img: { anh2 },
+      img: anh2,
 
-      title: "Save Animals",
-      description:
-        "The point is to accomplish an economy that is as one with nature and the climate.",
+      title: "Ngành ngôn ngữ",
+      description: [
+        "Ngôn ngữ Anh",
+        "Ngôn ngữ Nhật",
+        "Ngôn ngữ Hàn",
+        "Ngôn ngữ Trung",
+      ],
     },
     {
       id: 3,
-      img: { anh3 },
+      img: anh3,
 
-      title: "Charity For Live",
-      description:
-        "The point is to accomplish an economy that is as one with nature and the climate.",
+      title: "Quản trị kinh doanh",
+      description: [
+        "Digital marketing",
+        "Kinh doanh quốc tế",
+        "Quản trị khách sạn",
+        "Quản trị dịch vụ du lịch và lữ hành",
+        "Logistic và quản lý chuỗi cung ứng",
+        "Tài chính",
+      ],
     },
     {
       id: 4,
-      img: { anh4 },
+      img: anh4,
 
-      title: "Plant Trees",
-      description:
-        "The point is to accomplish an economy that is as one with nature and the climate.",
+      title: "Thiết kế truyền thông",
+      description: ["Truyền thông đa phương tiện", "Quan hệ công chúng"],
     },
   ];
 
@@ -74,16 +88,13 @@ const AboutHistory = () => {
     <div className="flex md:flex-row p-10 xs:flex-col">
       <div className="md:w-[25%] flex flex-col xs:w-full">
         <span className="tracking-[2px] text-[20px] text-[#d8b952] font-semibold ">
-          Ngành học
+          NGÀNH ĐÀO TẠO
         </span>
         <h2 className="tracking-[1px] font-semibold text-[45px]">FPT </h2>
         <p className="whitespace-normal opacity-50 mt-4 w-full">
-          The associated press economy and climate, environmental change,
-          financial and political advancements on the planet.
+          Chương trình đào tạo của trường Đại học FPT được thiết kế dựa trên sự
+          tham vấn của chuyên gia, chú trọng thực hành, phù hợp với nhu cầu.
         </p>
-        <Link href="#" className="text-[#d8b952] font-semibold">
-          Learn More
-        </Link>
       </div>
       <div className="w-[75%]">
         <Slider {...settings}>
@@ -109,7 +120,6 @@ const AboutHistory = () => {
                     <span className="absolute top-[50%] left-[50%] w-[10px] h-[10px] bg-[#d8b952] rounded-md transform -translate-x-2 -translate-y-2"></span>
                   </div>
                 </div>
-                <p className="mt-10">{item.description}</p>
               </div>
             </div>
           ))}
