@@ -1,4 +1,3 @@
-import React from "react";
 import { IoSearch } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
@@ -34,8 +33,8 @@ const Header = () => {
   }, [windowSize]);
 
   return (
-    <nav className="fixed top-0 right-0 left-0  flex items-center justify-center z-10">
-      <div className="flex w-[1296px] h-[85px] items-center md:justify-evenly bg-[#22836c] xs:justify-between xs:p-2">
+    <nav className="fixed top-0 right-0 left-0  flex items-center justify-center z-50">
+      <div className="flex w-[1296px] h-[85px] items-center md:justify-evenly bg-[#22836c] xs:justify-between xs:p-2 rounded-b-md">
         <img
           className="cursor-pointer"
           width="80px"

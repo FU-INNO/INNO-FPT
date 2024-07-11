@@ -50,7 +50,9 @@ const NewPost = () => {
       <div className="absolute inset-0 bg-black opacity-50 z-40 border-[1px]"></div>
       <div className="w-[640px] h-[450px] flex items-center justify-center z-50 ">
         <div className="flex flex-col w-[670px] h-[600px] items-center justify-center rounded-2xl bg-custom-white bg-opacity-70 border-[1px] ">
-          <h1 className="text-3xl mb-8">Coming soon</h1>
+          <h1 className="text-[80px] mb-8 text-[#d8b952] font-semibold">
+            Coming Soon
+          </h1>
           <Countdown date={targetDate} renderer={renderer} />
         </div>
       </div>
