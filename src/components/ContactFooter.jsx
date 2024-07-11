@@ -55,13 +55,13 @@ const ContactFooter = () => {
       <div className="flex space-x-4 mt-4">
         <Link
           to="https://www.facebook.com/educationfpt/"
-          className="bg-[#e8efed] p-2 rounded-full "
+          className="bg-[#3db391] p-2 rounded-full "
         >
           <FaFacebookF />
         </Link>
         <Link
           to="https://www.facebook.com/educationfpt/"
-          className="bg-[#e8efed] p-2 rounded-full"
+          className="bg-[#3db391] p-2 rounded-full"
         >
           <FaTwitter />
         </Link>

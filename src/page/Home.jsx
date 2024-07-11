@@ -1,12 +1,13 @@
+/* eslint-disable no-undef */
 import { Image } from "antd";
 import VisonHome from "../components/VisonHome";
 import dreamImg from "../assets/About_fptedu.jpg";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import PostShare from "../components/PostShare";
+// import Footer from "../components/Footer";
+// import Header from "../components/Header";
 import BannerHome from "../components/BannerHome";
 import Slice from "../components/Slice";
 import { AiOutlineUpCircle } from "react-icons/ai";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const [showGoToTop, setShowGoToTop] = useState(false);
@@ -58,7 +59,6 @@ const Home = () => {
           <AiOutlineUpCircle className="text-[40px] text-[#22836c]" />
         </button>
       )}
-      <PostShare />
     </div>
   );
 };

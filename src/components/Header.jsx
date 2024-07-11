@@ -1,9 +1,8 @@
+import { IoSearch } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
-import "../styles/Header.css";
-import logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
+
 const Header = () => {
   const [windowSize, setWindowSize] = useState({
     width: undefined,

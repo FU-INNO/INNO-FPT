@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { Avatar, Button, Modal, Spin, Typography } from "antd";
 import "../styles/ChatBox.css";
