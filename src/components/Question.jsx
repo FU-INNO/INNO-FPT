@@ -1,5 +1,6 @@
 import { Collapse } from 'antd';
 import imageFpt from '../assets/fpt.jpg'
+import ContactForm from './Contact'
 import "../styles/Question.css";
 
 
@@ -39,7 +40,11 @@ const FAQComponent = () => {
       <h2>Frequently Asked Questions</h2>
       <img src={imageFpt} alt="FAQ" className="faq-image" />
     </div>
+    <div className="faq-body">
     <Collapse items={items} className="faq-collapse" />
+    <ContactForm/>
+    </div>
+    
   </div>
   );
 

@@ -35,6 +35,11 @@
   margin-top: 45px;
 }
 
+.faq-body{
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 768px) {
   .faq-container {
     flex-direction: column;
