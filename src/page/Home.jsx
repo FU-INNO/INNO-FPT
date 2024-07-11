@@ -7,9 +7,9 @@ const Home = () => {
   return (
     <div className="flex flex-col justify-center">
       <BannerHome />
-      <Slice />
       <VisonHome />
       <Image src={dreamImg} />
+      <Slice />
     </div>
   );
 };

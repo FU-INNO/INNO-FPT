@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import { Link } from "react-router-dom";
 import banner from "../assets/conso.jpg";
 import "../styles/History.css";
 // import { useSpring, animated } from "@react-spring/web";
@@ -62,10 +63,10 @@ const BannerHistory = () => {
             data-wow-delay="400ms"
           >
             <li>
-              <a href="/">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="">Our Events</a>
+              <Link to="">Our Events</Link>
             </li>
           </ul>
         </div>

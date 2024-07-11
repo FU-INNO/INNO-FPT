@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/BannerHome.css";
 
 const BannerHome = () => {
@@ -15,9 +16,9 @@ const BannerHome = () => {
                 trường Xanh
               </span>
               <div className="text-center justify-center mt-4">
-                <a href="history" className="butn">
+                <Link to="/history" className="butn">
                   Lịch sử FPT Education
-                </a>
+                </Link>
               </div>
               <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ..."></div>
             </div>
