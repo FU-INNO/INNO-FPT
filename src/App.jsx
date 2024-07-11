@@ -11,6 +11,7 @@ import ChatBox from "./components/ChatBox.jsx";
 import History from "./page/History.jsx";
 import Login from "./components/Login.jsx";
 import Location from "./Location.jsx";
+import Error from "./components/403.jsx";
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route element={<History></History>} path="/history"></Route>
           <Route element={<Login></Login>} path="/login"></Route>
           <Route element={<Location></Location>} path="/location"></Route>
+          <Route element={<Error></Error>} path="/*"></Route>
         </Routes>
         <ChatBox />
       </Suspense>

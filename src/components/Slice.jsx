@@ -64,13 +64,13 @@ const Slice = () => {
   ];
 
   return (
-    <div className="flex flex-row p-10">
-      <div className="w-[25%] flex flex-col">
-        <span className="tracking-[2px] text-[#d8b952] font-semibold text-[18px]">
+    <div className="flex md:flex-row p-10 xs:flex-col">
+      <div className="md:w-[25%] flex flex-col xs:w-full">
+        <span className="tracking-[2px] text-[20px] text-[#d8b952] font-semibold ">
           Our Services
         </span>
         <h2 className="tracking-[1px] font-semibold text-[45px]">What We Do</h2>
-        <p>
+        <p className="whitespace-normal opacity-50 mt-4 w-full">
           The associated press economy and climate, environmental change,
           financial and political advancements on the planet.
         </p>
@@ -85,9 +85,9 @@ const Slice = () => {
               key={item.id}
               className="relative min-h-[1px] w-[268px] float-left"
             >
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col items-center text-center lg:m-2">
                 <img
-                  className="rounded-2xl text-center"
+                  className="rounded-2xl text-center "
                   width="267px"
                   height="350px"
                   src={item.img}
