@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
 import "../styles/Header.css";
-
+import logo from "../assets/logo.png";
 const Header = () => {
   const [windowSize, setWindowSize] = useState({
     width: undefined,
@@ -35,11 +35,7 @@ const Header = () => {
   return (
     <nav className="fixed top-0 right-0 left-0  flex items-center justify-center z-50">
       <div className="flex w-[1296px] h-[85px] items-center md:justify-evenly bg-[#22836c] xs:justify-between xs:p-2">
-        <img
-          className="cursor-pointer"
-          width="80px"
-          src="https://play-lh.googleusercontent.com/Fro4e_osoDhhrjgiZ_Y2C5FNXBMWvrb4rGpmkM1PDAcUPXeiAlPCq7NeaT4Q6NRUxRqo"
-        />
+        <img className="cursor-pointer" width="80px" src={logo} />
         <div className="xs:hidden md:block">
           <ul className="flex flex-row ">
             <li className="text-[20px] p-5 text-white font-bold font-Rubik cursor-pointer hover:text-[#d8b952]">
