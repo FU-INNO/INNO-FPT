@@ -39,19 +39,14 @@ const ChatBox = () => {
 
   return (
     <>
-      <div className="all-demo fixed top-0 right-[-26rem] bg-orange-700 shadow-lg z-50 transition-all ease-in-out duration-200 hidden lg:inline-block font-merienda">
+      <div className="all-demo fixed top-0 right-[-26rem] bg-orange-700 shadow-lg z-50 transition-all ease-in-out duration-200 hidden lg:inline-block font-merienda ">
         <div
           className="text-black text-xs uppercase py-1.5 px-2.5 font-medium alt-font "
           onClick={showModal}
         >
           <div className="flex items-center justify-center">
-            <span className="text-white text-base relative top-0 opacity-0">
-              Chat with AI
-            </span>
             <img
-              className="far fa-envelope text-white text-base align-middle relative top-[-0.25rem]"
-              width={"50px"}
-              height={"50px"}
+              className="far fa-envelope text-white text-base align-middle relative w-24 "
               src={v3}
               alt="chat icon"
             />
@@ -85,8 +80,8 @@ const ChatBox = () => {
               alt="user"
             />
             <div className="chat ml-2 p-3  bg-gray-100 rounded-lg shadow-md">
-              Xin chào, Chúng tôi ở đây và sẵn sàng tư vấn. Hãy cho chúng tôi
-              biết nhu cầu của bạn!
+              Xin chào, tôi là AI của FPT Education. Tôi ở đây và sẵn sàng trả
+              lời câu hỏi của bạn.
             </div>
           </div>
           {messages.map((message, index) => {
