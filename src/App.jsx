@@ -18,6 +18,7 @@ import ListBlog from "./page/ListBlog.jsx";
 import BlogDetail from "./page/DetailBlog.jsx";
 import Spinner from "./components/Spinner.jsx";
 import BlogPost from "./page/DetailBlog.jsx";
+import TextToSpeech from "./components/TextToSpeech.jsx";
 
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {

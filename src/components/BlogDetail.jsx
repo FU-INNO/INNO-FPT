@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, Typography, Tag, Image, Avatar } from "antd";
 import {
   HeartOutlined,
@@ -7,6 +7,7 @@ import {
   PinterestOutlined,
   LinkedinOutlined,
 } from "@ant-design/icons";
+import TextToSpeech from "../components/TextToSpeech";
 
 const { Title, Paragraph } = Typography;
 
@@ -36,6 +37,7 @@ const BlogDetail = ({ blog }) => {
               size={48}
             />
             <Paragraph className="ml-3">{blog.author.name}</Paragraph>
+            <TextToSpeech></TextToSpeech>
           </div>
 
           <blockquote className="italic border-l-4 border-gray-500 pl-4 mb-3">
