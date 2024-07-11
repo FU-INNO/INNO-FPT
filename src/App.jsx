@@ -11,8 +11,12 @@ import Error from "./components/403.jsx";
 import Footer from "./components/Footer.jsx";
 import ChatBox from "./components/ChatBox.jsx";
 import History from "./page/History.jsx";
-import Login from "./components/Login.jsx";
 import Location from "./Location.jsx";
+import Login from "./components/Login.jsx";
+import Question from "./page/Question.jsx";
+import ListBlog from "./page/ListBlog.jsx";
+import BlogDetail from "./page/DetailBlog.jsx";
+
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {
   return (
@@ -25,6 +29,9 @@ function App() {
           <Route element={<Login></Login>} path="/login"></Route>
           <Route element={<Location></Location>} path="/location"></Route>
           <Route element={<Error></Error>} path="/*"></Route>
+          <Route element={<Question></Question>} path="/question"></Route>
+          <Route element={<ListBlog></ListBlog>} path="/listBlog"></Route>
+          <Route element={<BlogDetail></BlogDetail>} path="/blogDetail"></Route>
         </Routes>
         <ChatBox />
         <Footer />

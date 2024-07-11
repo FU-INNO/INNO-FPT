@@ -1,4 +1,3 @@
-import React from "react";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import NewPost from "./NewPost";
 const PostShare = () => {
@@ -11,11 +10,10 @@ const PostShare = () => {
       <FacebookShareButton
         url={currentPageUrl}
         quote="please sharre this post"
-        hashtag="#POST-A-TREE TRỞ LẠI VỚI MÙA 4 - CÙNG NHAU, CHÚNG TA TÔ THÊM MÀU XANH CHO TRÁI ĐẤTsx,s,s"
+        hashtag="#POST-A-TREETRỞ LẠI VỚI MÙA 4 - CÙNG NHAU, CHÚNG TA TÔ THÊM MÀU XANH CHO TRÁI ĐẤTsx,s,s"
       >
         <FacebookIcon />
       </FacebookShareButton>
-  
     </div>
   );
 };

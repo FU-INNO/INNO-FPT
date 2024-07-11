@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { Avatar, Button, Modal, Spin, Typography } from "antd";
 import "../styles/ChatBox.css";
@@ -38,14 +39,15 @@ const ChatBox = () => {
 
   return (
     <>
-      <div className="all-demo fixed top-0 right-[-26rem] bg-orange-700 shadow-lg z-50 transition-all ease-in-out duration-200 hidden lg:inline-block font-merienda ">
+      <div className=" all-demo ">
+        {/* <div className="all-demo fixed top-0 right-[-26rem] bg-orange-700 shadow-lg z-50 transition-all ease-in-out duration-200 hidden lg:inline-block font-merienda "> */}
         <div
           className="text-black text-xs uppercase py-1.5 px-2.5 font-medium alt-font "
           onClick={showModal}
         >
           <div className="flex items-center justify-center">
             <img
-              className="far fa-envelope text-white text-base align-middle relative w-24 "
+              className="far fa-envelope text-white text-base align-middle relative "
               src={v3}
               alt="chat icon"
             />
@@ -72,7 +74,7 @@ const ChatBox = () => {
         footer={null}
         onCancel={handleCancel}
       >
-        <div className="cardChat mt-5  w-full md:w-1/2 lg:w-1/3 ">
+        <div className="cardChat mt-5  w-full   ">
           <div className="flex   justify-start">
             <img
               src="https://vcdn.subiz-cdn.com/file/firpkaqtviltgwodoyke_acosmvqwksvfjsq16c0d"

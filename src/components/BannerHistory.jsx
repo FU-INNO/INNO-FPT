@@ -2,7 +2,6 @@
 import { Link } from "react-router-dom";
 import banner from "../assets/conso.jpg";
 import "../styles/History.css";
-import { motion } from "framer-motion";
 import BouncingText from "../components/BouncingText";
 // import { useSpring, animated } from "@react-spring/web";
 
@@ -60,7 +59,7 @@ const BannerHistory = () => {
 
         <div className="sub-sm-title mt-4">
           <ul
-            className="wow fadeInUp flex justify-center md:justify-start text-white space-x-2 animate-fadeInUp"
+            className="wow fadeInUp flex justify-center md:justify-start  space-x-2 animate-fadeInUp"
             style={{ animationDelay: "400ms" }}
             data-wow-delay="400ms"
           >

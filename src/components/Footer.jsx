@@ -1,12 +1,12 @@
 import { Tooltip } from "antd";
 import { Link } from "react-router-dom";
-import ContactUs from "./Contact";
 import hn from "../assets/hanoi.jpg";
 import dn from "../assets/danang.jpg";
 import hcm from "../assets/hcm.jpg";
-import taynguyen from "../assets/taynguyen.webp";
+import taynguyen from "../assets/hue.jpg";
 import cantho from "../assets/cantho.jpg";
 import quynhon from "../assets/quynhon.jpeg";
+import ContactFooter from "./ContactFooter";
 
 const text = (src) => {
   return (
@@ -46,13 +46,13 @@ const Footer = () => {
     },
     {
       key: "TN",
-      link: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61340.84301409581!2d108.13494107910157!3d16.07572560000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219b509a30cfb%3A0xb93a05e26b3b28ff!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYw!5e0!3m2!1svi!2s!4v1720690448024!5m2!1svi!2s",
+      link: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d912911.5335594548!2d106.67489010970101!3d16.4415899678424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3141a10067072859%3A0xb0f09f60bfff5b5a!2zRlBUIEh14bq_!5e0!3m2!1svi!2s!4v1720715450636!5m2!1svi!2s",
     },
   ];
   return (
     <footer className="bg-[#22836c] text-white py-10 px-5">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-        <ContactUs />
+        <ContactFooter />
         <div>
           <h3 className="text-xl font-semibold mb-4">
             <span role="img" aria-label="location">
@@ -109,7 +109,7 @@ const Footer = () => {
                 alt="Gallery item"
                 className="w-full h-full rounded-md"
               />
-              <p>Tây Nguyên</p>
+              <p>Huế</p>
             </Tooltip>
           </div>
         </div>
