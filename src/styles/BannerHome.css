@@ -1,16 +1,3 @@
-.video-banner:before {
-    position: absolute;
-    content: "";
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(38, 70, 83, 0.76);
-    transition: background-color 0.3s, border-radius 0.3s, opacity 0.3s;
-    z-index: 1;
-
-}
-
 .butn {
     position: relative;
     line-height: 30px;
