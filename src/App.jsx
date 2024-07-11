@@ -11,7 +11,6 @@ import ChatBox from "./components/ChatBox.jsx";
 import History from "./page/History.jsx";
 import Location from "./Location.jsx";
 import Login from "./components/Login.jsx";
-import Location from "./Location.jsx";
 import Error from "./components/403.jsx";
 import Question from "./page/Question.jsx";
 import ListBlog from "./page/ListBlog.jsx";
@@ -41,5 +40,3 @@ function App() {
 }
 
 export default App;
-
-//use reactjs and antdesign to dev component like this image
