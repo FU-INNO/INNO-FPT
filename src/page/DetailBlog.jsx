@@ -1,12 +1,10 @@
-// src/components/BlogPost.jsx
-import React from "react";
-import { Row, Col } from "antd";
-import { useParams } from "react-router-dom";
+import { Row, Col } from 'antd';
 import BlogDetail from "../components/BlogDetail";
 import AsideBlog from "../components/AsideBlog";
 import BannerHistory from "../components/BannerHistory";
 import { BannerData } from "../Data/BannerData";
 import "../styles/DetailBlog.css";
+import BannerPost from "../components/BannerPost";
 
 const BlogPost = () => {
   const { url } = useParams();

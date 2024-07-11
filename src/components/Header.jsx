@@ -2,6 +2,8 @@ import { IoSearch } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
+import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 import { BsSunFill } from "react-icons/bs";
 import { FaMoon } from "react-icons/fa";
 import useDarkMode from "./useDarkMode";
@@ -13,6 +15,28 @@ const Header = () => {
   });
   const [isDarkMode, toggleDarkMode] = useDarkMode();
   const [openMenu, setOpenMenu] = useState(false);
+  const listLink = [
+    {
+      home: "Giới thiệu",
+      link: "/",
+    },
+    {
+      home: "Lịch sử",
+      link: "/history",
+    },
+    {
+      home: "Sự kiện sắp tới",
+      link: "/comming-soon",
+    },
+    {
+      home: "Bài đăng",
+      link: "/listBlog",
+    },
+    {
+      home: "Câu hỏi",
+      link: "/question",
+    },
+  ];
   const [isMobile, setIsMobile] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
@@ -47,7 +71,7 @@ const Header = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-center ${
-        scrollY > 85 ? "bg-white shadow-md" : "bg-[#22836c]"
+        scrollY > 85 ? "bg-white shadow-md " : "bg-[#22836c]"
       }`}
       style={{
         transform: scrollY > 85 ? "translateY(0)" : "translateY(0)",
@@ -58,20 +82,21 @@ const Header = () => {
         <img
           className="cursor-pointer xs:mb-5"
           width="80px"
-          src="https://play-lh.googleusercontent.com/Fro4e_osoDhhrjgiZ_Y2C5FNXBMWvrb4rGpmkM1PDAcUPXeiAlPCq7NeaT4Q6NRUxRqo"
+          src={logo}
           alt="Logo"
         />
         {!isMobile && (
           <ul className="flex flex-row justify-center items-center">
-            {["Home1", "Home2", "Home3", "Home4", "Home5"].map((item) => (
-              <li
-                key={item}
-                className={`text-[20px] p-5 font-bold cursor-pointer hover:text-[#d8b952] ${
+            {listLink?.map((item, key) => (
+              <Link
+                to={item?.link}
+                key={key}
+                className={`text-[20px] p-5 font-bold cursor-pointer hover:text-[#d8b952] focus:text-[#d8b952] ${
                   scrollY > 85 ? "text-black" : "text-white"
                 }`}
               >
-                {item}
-              </li>
+                {item.home}
+              </Link>
             ))}
           </ul>
         )}
@@ -93,18 +118,8 @@ const Header = () => {
               />
             )}
           </div>
-          <li
-            className={`hidden md:flex items-center ${
-              scrollY > 85 ? "bg-[#22836c]" : "bg-[#d8b952]"
-            } text-white font-bold rounded-md h-full px-4 cursor-pointer`}
-          >
-            <a
-              className={`text-lg capitalize px-2 py-3 ${
-                scrollY > 85 ? "text-white" : "text-white"
-              }`}
-            >
-              Become Volunteer
-            </a>
+          <li className="hidden md:flex items-center bg-[#d8b952] text-white font-bold rounded-md h-full px-4 cursor-pointer">
+            <a className="text-lg capitalize px-2 py-3">Become Volunteer</a>
           </li>
           {isMobile ? (
             openMenu ? (
@@ -125,15 +140,16 @@ const Header = () => {
           ) : null}
         </div>
         {openMenu && isMobile && (
-          <ul className="absolute top-[85px] right-0 bg-[#d8b952] text-center z-10 w-full text-black text-[20px]">
-            {["Home1", "Home2", "Home3", "Home4", "Home5"].map((item) => (
-              <li
-                key={item}
-                className="p-3 font-bold cursor-pointer border-b border-black border-opacity-5"
+          <ul className="absolute top-[85px] right-0 bg-[#d8b952] text-center z-10 w-full text-black text-[20px] flex-col flex">
+            {listLink?.map((item, key) => (
+              <Link
+                to={item?.link}
+                key={key}
+                className="text-[20px] p-5 text-white font-bold cursor-pointer hover:text-[#cd331f] focus:text-[#cd331f]"
                 onClick={() => setOpenMenu(false)}
               >
-                {item}
-              </li>
+                {item.home}
+              </Link>
             ))}
           </ul>
         )}
