@@ -12,6 +12,7 @@ import History from "./page/History.jsx";
 import Question from "./page/Question.jsx";
 import ListBlog from "./page/ListBlog.jsx";
 import BlogDetail from "./page/DetailBlog.jsx";
+import Game from "./components/GameSaveEnviroment.jsx";
 
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route element={<Question></Question>} path="/question"></Route>
           <Route element={<ListBlog></ListBlog>} path="/listBlog"></Route>
           <Route element={<BlogDetail></BlogDetail>} path="/blogDetail"></Route>
+          <Route element={<Game></Game>} path="/game"></Route>
         </Routes>
         <ChatBox />
       </Suspense>
