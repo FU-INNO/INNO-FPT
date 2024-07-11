@@ -1,12 +1,12 @@
 import { Tooltip } from "antd";
 import { Link } from "react-router-dom";
-import ContactUs from "./Contact";
 import hn from "../assets/hanoi.jpg";
 import dn from "../assets/danang.jpg";
 import hcm from "../assets/hcm.jpg";
 import taynguyen from "../assets/hue.jpg";
 import cantho from "../assets/cantho.jpg";
 import quynhon from "../assets/quynhon.jpeg";
+import ContactFooter from "./ContactFooter";
 
 const text = (src) => {
   return (
@@ -52,7 +52,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#22836c] text-white py-10 px-5">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-        <ContactUs />
+        <ContactFooter />
         <div>
           <h3 className="text-xl font-semibold mb-4">
             <span role="img" aria-label="location">
