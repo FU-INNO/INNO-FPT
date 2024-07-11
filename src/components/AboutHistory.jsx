@@ -1,7 +1,6 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from "react-router-dom";
 import anh1 from "../assets/cntt.webp";
 import anh2 from "../assets/ngonngu.webp";
 import anh3 from "../assets/qtkd.webp";
@@ -11,7 +10,7 @@ const AboutHistory = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 300,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
@@ -86,11 +85,10 @@ const AboutHistory = () => {
 
   return (
     <div className="flex md:flex-row p-10 xs:flex-col">
-      <div className="md:w-[25%] flex flex-col xs:w-full">
-        <span className="tracking-[2px] text-[20px] text-[#d8b952] font-semibold ">
-          NGÀNH ĐÀO TẠO
-        </span>
-        <h2 className="tracking-[1px] font-semibold text-[45px]">FPT </h2>
+      <div className="md:w-[25%] flex items-center justify-center flex-col xs:w-full">
+        <h2 className=" text-[#d8b952]  tracking-[1px] font-semibold text-[45px]">
+          Ngành đào tạo{" "}
+        </h2>
         <p className="whitespace-normal opacity-50 mt-4 w-full">
           Chương trình đào tạo của trường Đại học FPT được thiết kế dựa trên sự
           tham vấn của chuyên gia, chú trọng thực hành, phù hợp với nhu cầu.
