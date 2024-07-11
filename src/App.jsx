@@ -9,6 +9,7 @@ import loadWithDelay from "./utils/loadWithDelay.js";
 import { Spin } from "antd";
 import ChatBox from "./components/ChatBox.jsx";
 import History from "./page/History.jsx";
+import Location from "./Location.jsx";
 import Login from "./components/Login.jsx";
 import Location from "./Location.jsx";
 import Error from "./components/403.jsx";
