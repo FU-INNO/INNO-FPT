@@ -104,7 +104,7 @@ const Header = () => {
             </ul>
           )}
           {openMenu && (
-            <ul className=" absolute xs:mr-[-26px] xs:w-[360px] xs:ml-[-40px] md:hidden px-2 top-[85px] right-10 bg-[#d8b952] text-center z-10 w-[390px] text-black text-13 xs:h-[290px] ">
+            <ul className="absolute xs:mr-[-26px] flex flex-col justify-center items-center md:hidden px-2 top-[85px] right-10 bg-[#d8b952] text-center z-10 w-[390px] text-black text-13 xs:h-[290px]">
               <li className="text-[20px] p-3 text-black font-bold font-Rubik cursor-pointer border-b border-[black] border-opacity-5">
                 Home1
               </li>

@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router";
+import { useState } from "react";
 import Header from "./page/Home.jsx";
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
@@ -15,12 +16,12 @@ const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {
   return (
     <Provider store={store}>
-      <Header />
+      {/* <Header /> */}
       <Suspense fallback={<Spin tip="Loading..."></Spin>}>
         <Routes>
-          <Route element={<Home></Home>} path="/dms"></Route>
+          <Route element={<Home></Home>} path="/"></Route>
           <Route element={<History></History>} path="/history"></Route>
-          <Route element={<Error></Error>} path="404"></Route>
+          <Route element={<Error></Error>} path="/*"></Route>
         </Routes>
         <ChatBox />
       </Suspense>

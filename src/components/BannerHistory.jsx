@@ -1,6 +1,8 @@
 // import { useState } from "react";
 import banner from "../assets/conso.jpg";
 import "../styles/History.css";
+import { motion } from "framer-motion";
+import BouncingText from "../components/BouncingText";
 // import { useSpring, animated } from "@react-spring/web";
 
 const BannerHistory = () => {
@@ -52,7 +54,7 @@ const BannerHistory = () => {
             transform: "translate3d(0px, 0px, 0px)",
           }}
         >
-          Cột mốc FPT
+          <BouncingText text=" Cột mốc FPT" />
         </h2>
 
         <div className="sub-sm-title mt-4">
