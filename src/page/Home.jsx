@@ -43,12 +43,10 @@ const Home = () => {
 
   return (
     <div className="flex flex-col justify-center">
-      <Header />
       <BannerHome />
       <VisonHome />
       <Image src={dreamImg} />
       <Slice />
-      <Footer />
       {showGoToTop && (
         <button
           style={{

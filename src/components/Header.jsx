@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
 
+
 const Header = () => {
   const [windowSize, setWindowSize] = useState({
     width: undefined,

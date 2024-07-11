@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/BannerHome.css";
-
+import video from "../assets/videoHome.mp4";
 const BannerHome = () => {
   return (
     <>
@@ -26,24 +26,10 @@ const BannerHome = () => {
         </div>
 
         <div className="video-banner absolute top-0 left-0 w-full h-full -z-10  ">
-          <iframe
-            className="w-full h-full "
-            src="https://www.youtube.com/embed/ysEgrq3ULp0?autoplay=1&loop=1&mute=1&playlist=ysEgrq3ULp0"
-            frameBorder="0"
-            allow="autoplay; fullscreen"
-            allowFullScreen
-            title="YouTube video player"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              pointerEvents: "none",
-              zIndex: -1,
-            }}
-          ></iframe>
+          <video autoPlay loop muted className="w-full h-full object-cover">
+            <source src={video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </header>
     </>

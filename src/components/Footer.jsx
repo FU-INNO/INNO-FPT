@@ -87,7 +87,7 @@ const Footer = () => {
               />
               <p>Đà Nẵng </p>
             </Tooltip>{" "}
-            <Tooltip placement="bottomLeft" title={text(list.at(3).link)}>
+            <Tooltip placement="left" title={text(list.at(3).link)}>
               <img
                 src={hcm}
                 alt="Gallery item"
@@ -95,7 +95,7 @@ const Footer = () => {
               />
               <p>Hồ Chí Minh </p>
             </Tooltip>{" "}
-            <Tooltip placement="bottom" title={text(list.at(4).link)}>
+            <Tooltip placement="bottomLeft" title={text(list.at(4).link)}>
               <img
                 src={quynhon}
                 alt="Gallery item"

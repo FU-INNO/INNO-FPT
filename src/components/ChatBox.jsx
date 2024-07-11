@@ -3,6 +3,7 @@ import { Avatar, Button, Modal, Typography } from "antd";
 import "../styles/ChatBox.css";
 import v3 from "../assets/chat.png";
 import person from "../assets/person.svg";
+
 const ChatBox = () => {
   const [visible, setVisible] = useState(false);
 
@@ -65,7 +66,7 @@ const ChatBox = () => {
               src="https://vcdn.subiz-cdn.com/file/firpkaqtviltgwodoyke_acosmvqwksvfjsq16c0d"
               alt="user"
             />
-            <div className="chat ml-2 p-3  bg-gray-100 rounded-lg shadow-md">
+            <div className="chat ml-2 p-3 bg-gray-100 rounded-lg shadow-md">
               Xin chào, Chúng tôi ở đây và sẵn sàng tư vấn. Hãy cho chúng tôi
               biết nhu cầu của bạn!
             </div>
