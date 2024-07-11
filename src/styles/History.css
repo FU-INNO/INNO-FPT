@@ -33,12 +33,11 @@
     z-index: 1;
 }
 
-.page-title-section h1 {
+.page-title-section h2 {
     font-size: 64px;
     line-height: 1;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     color: #ffffff;
-    margin-bottom: 15px;
     position: relative;
     z-index: 9;
 }
@@ -245,4 +244,116 @@ a:focus {
     -moz-transition: .5s all ease;
     -o-transition: .5s all ease;
     transition: .5s all ease;
+}
+
+.button-history {
+    background: #dc9e39;
+    border-radius: 20px;
+}
+
+.history-01:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #f2f2f2;
+    width: 65%;
+    height: 70%;
+}
+
+.section-title span {
+    letter-spacing: 2px;
+    color: #d8b952;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.section-title h2 {
+    line-height: 1;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.history-01 .history-block:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    top: 0px;
+    left: 6px;
+}
+
+.position-relative {
+    position: relative !important;
+}
+
+.history-01 .history-block .inner-text:before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 1px;
+    top: 60px;
+    left: 6px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.history-01:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #f2f2f2;
+    width: 65%;
+    height: 70%;
+}
+
+.about-2-history .inner-box-history .icon-history:after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 141, 0, 0.2);
+    border-radius: 50%;
+    top: -12%;
+    left: -20%;
+}
+
+.about-2-history:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #f2f2f2;
+    width: 65%;
+    height: 100%;
+}
+
+.hover\:animation-pause:hover {
+    animation-play-state: paused;
+
+}
+
+.box:hover {
+    transform: scale(1.4) translateY(-15px);
+
+}
+
+.animate-fade,
+.animate-fade-down,
+.animate-fade-left,
+.animate-fade-right,
+.animate-fade-up,
+.animate-flameeven,
+.animate-flameodd,
+.animate-flip-down,
+.animate-flip-up,
+.animate-infinite-scroll,
+.animate-jump-in,
+.animate-jump-out,
+.animate-ping,
+.animate-pulse,
+.animate-spin,
+.animate-wiggle {
+    animation-composition: var(--tw-animate-composition);
 }

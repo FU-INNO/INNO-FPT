@@ -1,5 +1,7 @@
 import { Route, Routes } from "react-router";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
 import { lazy, Suspense } from "react";
@@ -19,6 +21,7 @@ function App() {
         </Routes>
         <ChatBox />
       </Suspense>
+      <Footer />
     </Provider>
   );
 }
