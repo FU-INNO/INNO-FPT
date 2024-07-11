@@ -41,7 +41,7 @@ const Header = () => {
           width="80px"
           src="https://play-lh.googleusercontent.com/Fro4e_osoDhhrjgiZ_Y2C5FNXBMWvrb4rGpmkM1PDAcUPXeiAlPCq7NeaT4Q6NRUxRqo"
         />
-        <div className="xs:hidden md:block">
+        <div className="xs:hidden md:block ">
           <ul className="flex flex-row ">
             <li className="text-[20px] p-5 text-white font-bold font-Rubik cursor-pointer hover:text-[#d8b952]">
               Home1
@@ -65,28 +65,28 @@ const Header = () => {
             <IoSearch className=" text-[24px] font-black cursor-pointer xs:" />
           </div>
           <li className="h-full bg-[#d8b952] list-none flex justify-center items-center rounded-md text-[white] xs:hidden md:block">
-            <span className="font-bold font-Rubik flex justify-center items-center w-[210px] h-full cursor-pointer">
+            <span className="font-bold font-Rubik flex text-center justify-center items-center w-[210px] h-full cursor-pointer  ip:hidden  xl:block ">
               <a className="relative line-height-[10px] font-medium overflow-hidden text-center rounded-lg p-2  inline-block text-white text-lg capitalize bg-[#d8b952] ">
                 Become Volunteer
               </a>
             </span>
           </li>
           {openMenu && isMoble ? (
-            <div className="p-[10px] bg-[#d8b952] mr-8">
+            <div className="p-[10px] bg-[#d8b952] mr-8  cursor-pointer">
               <MdOutlineClose
                 size={"24px"}
                 onClick={() => setOpenMenu(!openMenu)}
               />
             </div>
           ) : !openMenu && isMoble ? (
-            <div className="p-[10px] bg-[#d8b952] mr-8 ">
+            <div className="p-[10px] bg-[#d8b952] mr-8 cursor-pointer">
               <HiOutlineMenu
                 size={"24px"}
                 onClick={() => setOpenMenu(!openMenu)}
               />
             </div>
           ) : (
-            <ul className="md:flex md:flex-row md:gap-10  md:hidden">
+            <ul className="flex md:flex-row md:gap-10 md:hidden ">
               <li className="text-[20px] p-5 text-white font-bold font-Rubik cursor-pointer hover:text-[#d8b952]">
                 Home1
               </li>
@@ -105,20 +105,20 @@ const Header = () => {
             </ul>
           )}
           {openMenu && (
-            <ul className="absolute xs:mr-[-40px] md:hidden px-2 top-[85px] right-10 bg-[#d8b952]  p-10 text-center z-10 w-full text-black text-13">
-              <li className="text-[20px] p-5 text-black font-bold font-Rubik cursor-pointer hover:text-[#d8b952] border-b  border-[black]">
+            <ul className=" absolute xs:mr-[-26px] xs:w-[360px] xs:ml-[-40px] md:hidden px-2 top-[85px] right-10 bg-[#d8b952] text-center z-10 w-[390px] text-black text-13 xs:h-[290px] ">
+              <li className="text-[20px] p-3 text-black font-bold font-Rubik cursor-pointer border-b border-[black] border-opacity-5">
                 Home1
               </li>
-              <li className="text-[20px] p-5 text-black font-bold font-Rubik cursor-pointer hover:text-[#d8b952]">
+              <li className="text-[20px] p-3 text-black font-bold font-Rubik cursor-pointer border-b border-[black] border-opacity-5">
                 Home2
               </li>
-              <li className="text-[20px] p-5 text-black font-bold font-Rubik cursor-pointer hover:text-[#d8b952]">
+              <li className="text-[20px] p-3 text-black font-bold font-Rubik cursor-pointer border-b border-[black] border-opacity-5 ">
                 Home3
               </li>
-              <li className="text-[20px] p-5 text-black font-bold font-Rubik cursor-pointer hover:text-[#d8b952]">
+              <li className="text-[20px] p-3 text-black font-bold font-Rubik cursor-pointer  border-b border-[black] border-opacity-5">
                 Home4
               </li>
-              <li className="text-[20px] p-5 text-black font-bold font-Rubik cursor-pointer hover:text-[#d8b952]">
+              <li className="text-[20px] p-3 text-black font-bold font-Rubik cursor-pointer border-opacity-5 ">
                 Home5
               </li>
             </ul>

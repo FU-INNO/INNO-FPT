@@ -7,9 +7,9 @@ module.exports = {
     extend: {
       screens: {
         xs: "300px",
+        ip: "800px",
       },
     },
   },
   plugins: [],
 };
-
