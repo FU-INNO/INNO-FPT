@@ -9,6 +9,10 @@ import loadWithDelay from "./utils/loadWithDelay.js";
 import { Spin } from "antd";
 import ChatBox from "./components/ChatBox.jsx";
 import History from "./page/History.jsx";
+import Question from "./page/Question.jsx";
+import ListBlog from "./page/ListBlog.jsx";
+import BlogDetail from "./page/DetailBlog.jsx";
+
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 function App() {
   return (
@@ -18,6 +22,9 @@ function App() {
         <Routes>
           <Route element={<Home></Home>} path="/"></Route>
           <Route element={<History></History>} path="/history"></Route>
+          <Route element={<Question></Question>} path="/question"></Route>
+          <Route element={<ListBlog></ListBlog>} path="/listBlog"></Route>
+          <Route element={<BlogDetail></BlogDetail>} path="/blogDetail"></Route>
         </Routes>
         <ChatBox />
       </Suspense>
@@ -27,3 +34,5 @@ function App() {
 }
 
 export default App;
+
+//use reactjs and antdesign to dev component like this image
