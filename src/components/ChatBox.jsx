@@ -74,7 +74,7 @@ const ChatBox = () => {
         footer={null}
         onCancel={handleCancel}
       >
-        <div className="cardChat mt-5  w-full md:w-1/2 lg:w-1/3 ">
+        <div className="cardChat mt-5  w-full   ">
           <div className="flex   justify-start">
             <img
               src="https://vcdn.subiz-cdn.com/file/firpkaqtviltgwodoyke_acosmvqwksvfjsq16c0d"

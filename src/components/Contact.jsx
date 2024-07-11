@@ -1,15 +1,12 @@
 import { useRef } from "react";
 import { Form, Input, Button } from "antd";
 import emailjs from "@emailjs/browser";
-import  { useRef } from 'react';
-import { Form, Input, Button } from 'antd';
-import emailjs from '@emailjs/browser';
 
-export const ContactUs = () => {
+const ContactUs = () => {
   const formRef = useRef();
 
   const sendEmail = (values) => {
-    console.log('Form Values:', values);
+    console.log("Form Values:", values);
 
     const templateParams = {
       user_name: values.user_name,
@@ -17,19 +14,21 @@ export const ContactUs = () => {
       message: values.message,
     };
 
-    console.log('Template Params:', templateParams);
+    console.log("Template Params:", templateParams);
 
     emailjs
-      .send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams, 'YOUR_PUBLIC_KEY')
+      .send(
+        "service_w8ayrhz",
+        "template_op0z0uw",
+        templateParams,
+        "349V1zqbpVQ4sA3k2"
+      )
       .then(
-        () => {
-          console.log("SUCCESS!");
         (response) => {
-          console.log('SUCCESS!', response.status, response.text);
+          console.log("SUCCESS!", response.status, response.text);
         },
         (error) => {
-          console.log("FAILED...", error.text);
-          console.log('FAILED...', error);
+          console.log("FAILED...", error);
         }
       );
   };
@@ -71,5 +70,4 @@ export const ContactUs = () => {
     </Form>
   );
 };
-
 export default ContactUs;
