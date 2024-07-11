@@ -36,11 +36,11 @@ const ContactUs = () => {
   return (
     <Form ref={formRef} layout="vertical" onFinish={sendEmail}>
       <Form.Item
-        label="Name"
+        label="Tên"
         name="user_name"
         rules={[{ required: true, message: "Please enter your name" }]}
       >
-        <Input placeholder="Name" />
+        <Input placeholder="Tên" />
       </Form.Item>
 
       <Form.Item
@@ -55,16 +55,16 @@ const ContactUs = () => {
       </Form.Item>
 
       <Form.Item
-        label="Message"
-        name="message"
-        rules={[{ required: true, message: "Please enter your message" }]}
+        label="Lời nhắn"
+        name="Lời nhắn"
+        rules={[{ required: true, message: "Nhập lời nhắn" }]}
       >
-        <Input.TextArea rows={5} placeholder="Write your message here..." />
+        <Input.TextArea rows={5} placeholder="Viết lời nhắn của bạn đây..." />
       </Form.Item>
 
       <Form.Item>
         <Button type="primary" htmlType="submit">
-          Send
+          Gửi
         </Button>
       </Form.Item>
     </Form>

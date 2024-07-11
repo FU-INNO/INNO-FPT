@@ -28,8 +28,18 @@ const Map = () => {
 
   const getCityAndCountry = async (lat, lng) => {
     try {
+      //   const response = await axios.get(
+      //     `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=3c93cb4a7e774f9b8e218edc60fe80d8`
+      //   );
+      //   const { state, country } = response.data.results[0].components;
+
+      //   console.log("city", response);
+      //   setAddress({ state, country });
+      // } catch (error) {
+      //   console.error("Error getting address", error);
+      // }
       const response = await axios.get(
-        `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=3c93cb4a7e774f9b8e218edc60fe80d8`
+        `https://weatherkit.apple.com/api/v1/availability/${lat}+${lng}`
       );
       const { state, country } = response.data.results[0].components;
 
