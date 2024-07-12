@@ -1,18 +1,28 @@
-import { Row, Col } from "antd";
+import { Row, Col } from 'antd';
 import BlogDetail from "../components/BlogDetail";
 import AsideBlog from "../components/AsideBlog";
+import BannerHistory from "../components/BannerHistory";
+import { BannerData } from "../Data/BannerData";
 import "../styles/DetailBlog.css";
 import BannerPost from "../components/BannerPost";
 
 const BlogPost = () => {
+  const { url } = useParams();
+  const decodedUrl = decodeURIComponent(url);
+  const blog = BannerData.find((item) => item.url === decodedUrl);
+
+  if (!blog) {
+    return <div>Blog not found</div>;
+  }
+
   return (
     <>
-      <BannerPost />
+      <BannerHistory />
       <section className="single-block-wrapper section-padding">
         <div style={{ width: "100%", padding: "0 16px" }}>
           <Row gutter={[16, 16]}>
             <Col xs={24} md={16}>
-              <BlogDetail />
+              <BlogDetail blog={blog} />
             </Col>
             <Col xs={24} md={8}>
               <AsideBlog />

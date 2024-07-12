@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Form, Input, Button } from "antd";
 import emailjs from "@emailjs/browser";
 
-const ContactUs = () => {
+export const ContactUs = () => {
   const formRef = useRef();
 
   const sendEmail = (values) => {
@@ -26,6 +26,8 @@ const ContactUs = () => {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
+          formRef.current.resetFields(); // Reset form fields
+          alert("Email sent successfully!");
         },
         (error) => {
           console.log("FAILED...", error);
@@ -34,7 +36,12 @@ const ContactUs = () => {
   };
 
   return (
-    <Form ref={formRef} layout="vertical" onFinish={sendEmail}>
+    <Form
+      ref={formRef}
+      layout="vertical "
+      className="xs:w-[256px] md:w-full"
+      onFinish={sendEmail}
+    >
       <Form.Item
         label="Tên"
         name="user_name"
@@ -70,4 +77,5 @@ const ContactUs = () => {
     </Form>
   );
 };
+
 export default ContactUs;

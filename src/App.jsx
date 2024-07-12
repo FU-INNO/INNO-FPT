@@ -14,6 +14,9 @@ import Login from "./components/Login.jsx";
 import Question from "./page/Question.jsx";
 import ListBlog from "./page/ListBlog.jsx";
 import BlogDetail from "./page/DetailBlog.jsx";
+import Spinner from "./components/Spinner.jsx";
+import BlogPost from "./page/DetailBlog.jsx";
+import TextToSpeech from "./components/TextToSpeech.jsx";
 import PostShare from "./components/PostShare.jsx";
 import Project from "./page/Project.jsx";
 
@@ -31,6 +34,7 @@ function App() {
           <Route element={<Error></Error>} path="/*"></Route>
           <Route element={<Question></Question>} path="/question"></Route>
           <Route element={<ListBlog></ListBlog>} path="/listBlog"></Route>
+          <Route element={<BlogPost></BlogPost>} path="/blog/:url"></Route>
           <Route element={<BlogDetail></BlogDetail>} path="/blogDetail"></Route>
           <Route element={<PostShare></PostShare>} path="/comming-soon"></Route>
           <Route element={<Project></Project>} path="/project"></Route>

@@ -4,11 +4,16 @@ import { HiOutlineMenu } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import { BsSunFill } from "react-icons/bs";
+import { FaMoon } from "react-icons/fa";
+import useDarkMode from "./useDarkMode";
+
 const Header = () => {
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
   });
+  const [isDarkMode, toggleDarkMode] = useDarkMode();
   const [openMenu, setOpenMenu] = useState(false);
   const listLink = [
     {
@@ -37,6 +42,8 @@ const Header = () => {
     },
   ];
   const [isMobile, setIsMobile] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
   useEffect(() => {
     const handleSize = () => {
       setWindowSize({
@@ -48,6 +55,7 @@ const Header = () => {
     handleSize();
     return () => window.removeEventListener("resize", handleSize);
   }, []);
+
   useEffect(() => {
     if (windowSize.width < 768) {
       setIsMobile(true);
@@ -56,9 +64,25 @@ const Header = () => {
     }
   }, [windowSize]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 right-0 left-0 flex items-center justify-center z-50 bg-[#22836c] rounded-b-md ">
-      <div className="flex w-full max-w-[1296px] h-[85px] items-center justify-between p-2 md:justify-evenly">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-center ${
+        scrollY > 85 ? "bg-white shadow-md " : "bg-[#22836c]"
+      }`}
+      style={{
+        transform: scrollY > 85 ? "translateY(0)" : "translateY(0)",
+        height: scrollY > 85 ? "85px" : "85px",
+      }}
+    >
+      <div className="flex w-full max-w-[1296px] h-[85px] items-center justify-between p-2 md:justify-evenly transition-transform duration-300 ease-in-out">
         <img
           className="cursor-pointer xs:mb-5"
           width="80px"
@@ -71,21 +95,35 @@ const Header = () => {
               <Link
                 to={item?.link}
                 key={key}
-                className="text-[20px] p-5 text-white font-bold cursor-pointer hover:text-[#d8b952] focus:text-[#d8b952]"
+                className={`text-[10px] xl:text-[20px] p-5 font-bold cursor-pointer hover:text-[#d8b952] focus:text-[#d8b952] ${
+                  scrollY > 85 ? "text-black" : "text-white"
+                }`}
               >
                 {item.home}
               </Link>
             ))}
           </ul>
         )}
-        <div className="flex flex-row items-center text-white">
-          <div className="px-3 py-2 m-4">
-            <IoSearch className="text-[24px] cursor-pointer" />
+        <div className="flex flex-row items-center">
+          <div className="px-3 py-2 m-4 xs:hidden 2xl:hidden">
+            {isDarkMode ? (
+              <BsSunFill
+                size={"24px"}
+                color="#e9c46a"
+                className="cursor-pointer"
+                onClick={() => toggleDarkMode(!isDarkMode)}
+              />
+            ) : (
+              <FaMoon
+                size={"24px"}
+                color="#e9c46a"
+                className="cursor-pointer"
+                onClick={() => toggleDarkMode(!isDarkMode)}
+              />
+            )}
           </div>
           <li className="hidden md:flex items-center bg-[#d8b952] text-white font-bold rounded-md h-full px-4 cursor-pointer">
-            <Link to={"/login"} className="text-lg capitalize px-2 py-3">
-              Đăng nhập
-            </Link>
+            <a className="text-lg capitalize px-2 py-3">Đăng Nhập</a>
           </li>
           {isMobile ? (
             openMenu ? (
