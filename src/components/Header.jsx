@@ -6,8 +6,10 @@ import { Link } from "react-router-dom";
 import { BsSunFill } from "react-icons/bs";
 import { FaMoon } from "react-icons/fa";
 import useDarkMode from "./useDarkMode";
+import { useUser } from "../hooks/useUser";
 
 const Header = () => {
+  const { user } = useUser();
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
@@ -42,7 +44,6 @@ const Header = () => {
   ];
   const [isMobile, setIsMobile] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-
   useEffect(() => {
     const handleSize = () => {
       setWindowSize({
@@ -71,6 +72,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {}, [user]);
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-center ${
@@ -122,9 +124,13 @@ const Header = () => {
             )}
           </div>
           <li className="hidden md:flex items-center bg-[#d8b952] text-white font-bold rounded-md h-full px-4 cursor-pointer">
-            <Link to={"/loginAuth"} className="text-lg capitalize px-2 py-3">
-              Đăng Nhập
-            </Link>
+            {user === null ? (
+              <Link to={"/loginAuth"} className="text-lg capitalize px-2 py-3">
+                Đăng Nhập
+              </Link>
+            ) : (
+              <span>{user?.name}</span>
+            )}
           </li>
           {isMobile ? (
             openMenu ? (
