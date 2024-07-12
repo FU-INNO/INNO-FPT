@@ -43,6 +43,7 @@ const Game = () => {
   const [roundComplete, setRoundComplete] = useState(false);
   const [paused, setPaused] = useState(false);
   const [selectedHint, setSelectedHint] = useState("");
+  const [showGuide, setShowGuide] = useState(false);
 
   useEffect(() => {
     if (!paused && time > 0) {
@@ -129,9 +130,11 @@ const Game = () => {
   };
 
   const handleGuide = () => {
-    alert(
-      "Guide: Click on the good images to increase your score. Avoid the bad images to maintain your health."
-    );
+    setShowGuide(true);
+  };
+
+  const closeGuide = () => {
+    setShowGuide(false);
   };
 
   return (
@@ -200,9 +203,33 @@ const Game = () => {
           </div>
         </div>
       )}
+      {showGuide && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-8 rounded shadow-lg flex flex-col items-center">
+            <h2 className="text-2xl mb-4">Guide</h2>
+            <div className="grid grid-cols-2 gap-4">
+              {images.map((image, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <img
+                    src={image.src}
+                    alt={image.hint}
+                    className="w-24 h-24 mb-2 border rounded shadow-md"
+                  />
+                  <p className="text-center">{image.hint}</p>
+                </div>
+              ))}
+            </div>
+            <button
+              onClick={closeGuide}
+              className="mt-4 p-2 text-lg bg-blue-500 text-white rounded shadow-md hover:bg-blue-600"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default Game;
-// tôi muốn

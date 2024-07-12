@@ -13,12 +13,13 @@ import Location from "./Location.jsx";
 import Login from "./components/Login.jsx";
 import Question from "./page/Question.jsx";
 import ListBlog from "./page/ListBlog.jsx";
+import BlogDetail from "./page/DetailBlog.jsx";
+import Game from "./components/GameSaveEnviroment.jsx";
 import BlogPost from "./page/DetailBlog.jsx"; // Ensure the correct path
 import Spinner from "./components/Spinner.jsx";
 import TextToSpeech from "./components/TextToSpeech.jsx";
 import PostShare from "./components/PostShare.jsx";
 import Project from "./page/Project.jsx";
-import Game from "./components/GameSaveEnviroment.jsx";
 
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 
