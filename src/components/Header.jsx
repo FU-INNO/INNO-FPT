@@ -36,8 +36,8 @@ const Header = () => {
       link: "/question",
     },
     {
-      home: "Đề xuất dự án",
-      link: "/location",
+      home: "Game",
+      link: "/game",
     },
   ];
   const [isMobile, setIsMobile] = useState(false);
