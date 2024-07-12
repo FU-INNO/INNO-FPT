@@ -13,32 +13,31 @@ import Location from "./Location.jsx";
 import Login from "./components/Login.jsx";
 import Question from "./page/Question.jsx";
 import ListBlog from "./page/ListBlog.jsx";
-import BlogDetail from "./page/DetailBlog.jsx";
+import BlogPost from "./page/DetailBlog.jsx"; // Ensure the correct path
 import Spinner from "./components/Spinner.jsx";
-import BlogPost from "./page/DetailBlog.jsx";
 import TextToSpeech from "./components/TextToSpeech.jsx";
 import PostShare from "./components/PostShare.jsx";
 import Project from "./page/Project.jsx";
 
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
+
 function App() {
   return (
     <Provider store={store}>
       <Header />
       <Suspense fallback={<Spin tip="Loading..."></Spin>}>
         <Routes>
-          <Route element={<Home></Home>} path="/"></Route>
-          <Route element={<History></History>} path="/history"></Route>
-          <Route element={<Login></Login>} path="/login"></Route>
-          <Route element={<Location></Location>} path="/location"></Route>
-          <Route element={<Error></Error>} path="/*"></Route>
-          <Route element={<Question></Question>} path="/question"></Route>
-          <Route element={<ListBlog></ListBlog>} path="/listBlog"></Route>
-          <Route element={<BlogPost></BlogPost>} path="/blog/:url"></Route>
-          <Route element={<BlogDetail></BlogDetail>} path="/blogDetail"></Route>
-          <Route element={<PostShare></PostShare>} path="/comming-soon"></Route>
-          <Route element={<Project></Project>} path="/project"></Route>
-          <Route element={<Location></Location>} path="/project"></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/location" element={<Location />} />
+          <Route path="/*" element={<Error />} />
+          <Route path="/question" element={<Question />} />
+          <Route path="/listBlog" element={<ListBlog />} />
+          <Route path="/blog/:url" element={<BlogPost />} />{" "}
+          <Route path="/blogDetail" element={<BlogPost />} />{" "}
+          <Route path="/coming-soon" element={<PostShare />} />
+          <Route path="/project" element={<Project />} />
         </Routes>
         <ChatBox />
         <Footer />

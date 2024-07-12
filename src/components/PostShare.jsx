@@ -2,8 +2,7 @@ import { FacebookShareButton, FacebookIcon } from "react-share";
 import NewPost from "./NewPost";
 const PostShare = () => {
   const currentPageUrl = window.location.href;
-  // const shareUrl =
-  //   "https://suakunchoem.lof.vn/?fbclid=IwZXh0bgNhZW0CMTAAAR1mOWTHYNOFIKTkolQ_7o4GQfINuU4TKPkrFB7oX5mQK3UVN0vg3xInwD8_aem_el2XBg2LrP437Ff5_SVF5A";
+
   return (
     <div>
       <NewPost />
