@@ -9,8 +9,8 @@ const { Title, Paragraph } = Typography;
 
 const AsideBlog = () => {
   return (
-    <div className="sidebar-right">
-      <div className="mt-5 lg:mt-0">
+    <div className="sidebar-right ">
+      <div className="mt-10 lg:mt-0 ">
         <div className="text-center p-3 mb-5">
           <div>
             <Image src="images/author.jpg" alt="Author" className="w-full" />

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import cut_tree from "../assets/environment/cut_tree.png";
 import cycle_drive_1 from "../assets/environment/cycle_drive_1.png";
 import energy_renewable1 from "../assets/environment/energy_renewable1.png";
@@ -44,7 +44,6 @@ const Game = () => {
   const [paused, setPaused] = useState(false);
   const [selectedHint, setSelectedHint] = useState("");
   const [showGuide, setShowGuide] = useState(false);
-  const guideRef = useRef(null);
 
   useEffect(() => {
     if (!paused && time > 0) {
@@ -83,22 +82,6 @@ const Game = () => {
       return () => clearTimeout(timer);
     }
   }, [roundComplete]);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (guideRef.current && !guideRef.current.contains(event.target)) {
-        setShowGuide(false);
-      }
-    };
-    if (showGuide) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showGuide]);
 
   const generateRandomImages = () => {
     return Array.from(
@@ -163,9 +146,9 @@ const Game = () => {
         Pause
       </button>
       <div className="flex mt-4 space-x-4">
-        <h2 className="text-xl">Time: {time}s</h2>
-        <h2 className="text-xl">Health: {health}</h2>
-        <h2 className="text-xl">Score: {score}</h2>
+        <h2>Time: {time}s</h2>
+        <h2>Health: {health}</h2>
+        <h2>Score: {score}</h2>
       </div>
       {gameOver ? (
         <div className="mt-8 text-center">
@@ -222,28 +205,26 @@ const Game = () => {
       )}
       {showGuide && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-          <div
-            className="bg-white p-8 rounded shadow-lg text-center w-3/4 max-w-3xl"
-            ref={guideRef}
-          >
+          <div className="bg-white p-8 rounded shadow-lg flex flex-col items-center">
+            <h2 className="text-2xl mb-4">Guide</h2>
+            <div className="grid grid-cols-2 gap-4">
+              {images.map((image, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <img
+                    src={image.src}
+                    alt={image.hint}
+                    className="w-24 h-24 mb-2 border rounded shadow-md"
+                  />
+                  <p className="text-center">{image.hint}</p>
+                </div>
+              ))}
+            </div>
             <button
               onClick={closeGuide}
-              className="absolute top-2 right-2 p-1 bg-red-500 text-white rounded-full"
+              className="mt-4 p-2 text-lg bg-blue-500 text-white rounded shadow-md hover:bg-blue-600"
             >
-              &times;
+              Close
             </button>
-            <div className="flex">
-              <div className="w-1/2 p-4">
-                <img
-                  src={currentImages[0]?.src}
-                  alt="Guide"
-                  className="w-full h-auto border rounded shadow-md"
-                />
-              </div>
-              <div className="w-1/2 p-4 text-left">
-                <p className="text-xl">{currentImages[0]?.hint}</p>
-              </div>
-            </div>
           </div>
         </div>
       )}

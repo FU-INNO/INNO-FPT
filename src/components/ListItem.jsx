@@ -1,4 +1,3 @@
-// src/components/ListBlog.jsx
 import React from "react";
 import { Layout, Row, Col } from "antd";
 import { Link } from "react-router-dom";
