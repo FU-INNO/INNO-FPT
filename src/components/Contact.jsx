@@ -26,6 +26,7 @@ export const ContactUs = () => {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
+          console.log(templateParams);
           formRef.current.resetFields(); // Reset form fields
           alert("Email sent successfully!");
         },
