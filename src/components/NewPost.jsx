@@ -47,7 +47,8 @@ const NewPost = () => {
       49 * 60 * 1000 +
       28 * 1000
   );
-  const text = "https://ecology.websitelayout.net/img/bg/bg-01.jpg";
+  const text =
+    "https://media.moitruongvadothi.vn/images/2023/10/24/9883-1698120609-hinh-anh-bao-ve-moi-truong-dep-1.jpg";
   return (
     <section
       className="bg-cover bg-center w-full flex flex-col items-center justify-center fixed inset-0 z-50"
