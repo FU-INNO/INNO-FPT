@@ -1,4 +1,3 @@
-import { IoSearch } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { MdOutlineClose } from "react-icons/md";
@@ -123,7 +122,9 @@ const Header = () => {
             )}
           </div>
           <li className="hidden md:flex items-center bg-[#d8b952] text-white font-bold rounded-md h-full px-4 cursor-pointer">
-            <a className="text-lg capitalize px-2 py-3">Đăng Nhập</a>
+            <Link to={"/loginAuth"} className="text-lg capitalize px-2 py-3">
+              Đăng Nhập
+            </Link>
           </li>
           {isMobile ? (
             openMenu ? (

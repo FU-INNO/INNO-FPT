@@ -1,9 +1,6 @@
 import { Collapse } from "antd";
 import imageFpt from "../assets/fpt.jpg";
 import ContactForm from "./Contact";
-import { Collapse } from "antd";
-import imageFpt from "../assets/fpt.jpg";
-import ContactForm from "./Contact";
 import "../styles/Question.css";
 
 const FAQComponent = () => {

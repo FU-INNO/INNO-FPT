@@ -1,10 +1,7 @@
 import { Button } from "antd";
 import { GoogleOutlined } from "@ant-design/icons";
-import { useSaveHref } from "../hooks/useSaveHref";
 
 const LoginOAuth = () => {
-  const {saveHref} = useSaveHref();
-  saveHref(window.location.href);
   return (
     <div className="flex items-center justify-center min-h-screen bg-white flex-col">
       <div className="p-6 bg-black rounded-lg shadow-lg">
