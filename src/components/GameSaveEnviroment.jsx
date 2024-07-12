@@ -43,8 +43,8 @@ const Game = () => {
   const [roundComplete, setRoundComplete] = useState(false);
   const [paused, setPaused] = useState(false);
   const [selectedHint, setSelectedHint] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
   const [showGuide, setShowGuide] = useState(false);
-  const [guideImage, setGuideImage] = useState(null);
 
   useEffect(() => {
     if (!paused && time > 0) {
@@ -94,6 +94,7 @@ const Game = () => {
   const handleClick = (index) => {
     const image = currentImages[index];
     setSelectedHint(image.hint);
+    setSelectedImage(image.src);
     if (scoreImages.includes(image.src)) {
       setScore((prevScore) => prevScore + 1);
     } else if (healthImages.includes(image.src)) {
@@ -120,6 +121,7 @@ const Game = () => {
     setRoundComplete(false);
     setPaused(false);
     setSelectedHint("");
+    setSelectedImage(null);
   };
 
   const handlePause = () => {
@@ -130,14 +132,12 @@ const Game = () => {
     setPaused(false);
   };
 
-  const handleGuide = (image) => {
-    setGuideImage(image);
+  const handleGuide = () => {
     setShowGuide(true);
   };
 
   const closeGuide = () => {
     setShowGuide(false);
-    setGuideImage(null);
   };
 
   return (
@@ -170,7 +170,7 @@ const Game = () => {
               key={index}
               src={image.src}
               alt="game item"
-              onClick={() => handleGuide(image)}
+              onClick={() => handleClick(index)}
               className="w-24 h-24 m-2 cursor-pointer border rounded shadow-md hover:shadow-lg"
             />
           ))}
@@ -197,25 +197,29 @@ const Game = () => {
             >
               Continue
             </button>
+            <button
+              onClick={handleGuide}
+              className="p-2 text-lg bg-blue-500 text-white rounded shadow-md hover:bg-blue-600 m-2"
+            >
+              Guide
+            </button>
           </div>
         </div>
       )}
-      {showGuide && guideImage && (
+      {showGuide && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-8 rounded shadow-lg flex flex-col items-center">
+          <div className="bg-white p-8 rounded shadow-lg text-center">
             <h2 className="text-2xl mb-4">Guide</h2>
-            <div className="flex">
+            {selectedImage && (
               <div className="flex flex-col items-center">
                 <img
-                  src={guideImage.src}
-                  alt={guideImage.hint}
-                  className="w-24 h-24 mb-2 border rounded shadow-md"
+                  src={selectedImage}
+                  alt="Selected"
+                  className="w-24 h-24 mb-4 border rounded shadow-md"
                 />
+                <p>{selectedHint}</p>
               </div>
-              <div className="flex flex-col items-center ml-8">
-                <p className="text-center">{guideImage.hint}</p>
-              </div>
-            </div>
+            )}
             <button
               onClick={closeGuide}
               className="mt-4 p-2 text-lg bg-blue-500 text-white rounded shadow-md hover:bg-blue-600"

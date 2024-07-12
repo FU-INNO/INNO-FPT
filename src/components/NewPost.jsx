@@ -35,6 +35,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 
 const NewPost = () => {
   const [currentPageUrl, setCurrentPageUrl] = useState("");
+  // currentPageUrl = "https://ecology.websitelayout.net/img/bg/bg-01.jpg";
   const token = useToken();
   useEffect(() => {
     setCurrentPageUrl(window.location.href);
@@ -47,7 +48,7 @@ const NewPost = () => {
       49 * 60 * 1000 +
       28 * 1000
   );
-  const text = "https://ant.design/";
+  const text = "https://ecology.websitelayout.net/img/bg/bg-01.jpg";
   return (
     <section
       className="bg-cover bg-center w-full flex flex-col items-center justify-center fixed inset-0 z-50"
