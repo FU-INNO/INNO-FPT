@@ -15,12 +15,12 @@ import LoginOAuth from "./components/LoginOAuth.jsx";
 import Question from "./page/Question.jsx";
 import ListBlog from "./page/ListBlog.jsx";
 import BlogDetail from "./page/DetailBlog.jsx";
-import Game from "./components/GameSaveEnviroment.jsx";
 import BlogPost from "./page/DetailBlog.jsx"; // Ensure the correct path
 import Spinner from "./components/Spinner.jsx";
 import TextToSpeech from "./components/TextToSpeech.jsx";
 import PostShare from "./components/PostShare.jsx";
 import Project from "./page/Project.jsx";
+import Game from "./components/GameSaveEnviroment.jsx";
 
 const Home = lazy(() => loadWithDelay(() => import("./page/Home.jsx"), 2000));
 
@@ -34,7 +34,6 @@ function App() {
           <Route element={<History></History>} path="/history"></Route>
           <Route element={<Login></Login>} path="/login"></Route>
           <Route element={<LoginOAuth></LoginOAuth>} path="/loginAuth"></Route>
-
           <Route element={<Location></Location>} path="/location"></Route>
           <Route element={<Error></Error>} path="/*"></Route>
           <Route element={<Question></Question>} path="/question"></Route>
@@ -43,7 +42,8 @@ function App() {
           <Route element={<BlogDetail></BlogDetail>} path="/blogDetail"></Route>
           <Route element={<PostShare></PostShare>} path="/comming-soon"></Route>
           <Route element={<Project></Project>} path="/project"></Route>
-          <Route element={<Location></Location>} path="/project"></Route>
+          <Route element={<Location></Location>} path="/location"></Route>
+          <Route element={<Game></Game>} path="/game"></Route>
         </Routes>
         <ChatBox />
         <Footer />

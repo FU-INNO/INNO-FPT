@@ -44,6 +44,7 @@ const Game = () => {
   const [paused, setPaused] = useState(false);
   const [selectedHint, setSelectedHint] = useState("");
   const [showGuide, setShowGuide] = useState(false);
+  const [guideImage, setGuideImage] = useState(null);
 
   useEffect(() => {
     if (!paused && time > 0) {
@@ -77,7 +78,7 @@ const Game = () => {
     if (roundComplete) {
       const timer = setTimeout(() => {
         startNextRound();
-      }, 1000); // Delay to visualize the round completion
+      }, 1000);
 
       return () => clearTimeout(timer);
     }
@@ -129,12 +130,14 @@ const Game = () => {
     setPaused(false);
   };
 
-  const handleGuide = () => {
+  const handleGuide = (image) => {
+    setGuideImage(image);
     setShowGuide(true);
   };
 
   const closeGuide = () => {
     setShowGuide(false);
+    setGuideImage(null);
   };
 
   return (
@@ -167,7 +170,7 @@ const Game = () => {
               key={index}
               src={image.src}
               alt="game item"
-              onClick={() => handleClick(index)}
+              onClick={() => handleGuide(image)}
               className="w-24 h-24 m-2 cursor-pointer border rounded shadow-md hover:shadow-lg"
             />
           ))}
@@ -194,30 +197,24 @@ const Game = () => {
             >
               Continue
             </button>
-            <button
-              onClick={handleGuide}
-              className="p-2 text-lg bg-blue-500 text-white rounded shadow-md hover:bg-blue-600 m-2"
-            >
-              Guide
-            </button>
           </div>
         </div>
       )}
-      {showGuide && (
+      {showGuide && guideImage && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-8 rounded shadow-lg flex flex-col items-center">
             <h2 className="text-2xl mb-4">Guide</h2>
-            <div className="grid grid-cols-2 gap-4">
-              {images.map((image, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <img
-                    src={image.src}
-                    alt={image.hint}
-                    className="w-24 h-24 mb-2 border rounded shadow-md"
-                  />
-                  <p className="text-center">{image.hint}</p>
-                </div>
-              ))}
+            <div className="flex">
+              <div className="flex flex-col items-center">
+                <img
+                  src={guideImage.src}
+                  alt={guideImage.hint}
+                  className="w-24 h-24 mb-2 border rounded shadow-md"
+                />
+              </div>
+              <div className="flex flex-col items-center ml-8">
+                <p className="text-center">{guideImage.hint}</p>
+              </div>
             </div>
             <button
               onClick={closeGuide}
