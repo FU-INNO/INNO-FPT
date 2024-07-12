@@ -63,7 +63,7 @@ export const ContactUs = () => {
 
       <Form.Item
         label="Lời nhắn"
-        name="Lời nhắn"
+        name="message"
         rules={[{ required: true, message: "Nhập lời nhắn" }]}
       >
         <Input.TextArea rows={5} placeholder="Viết lời nhắn của bạn đây..." />
